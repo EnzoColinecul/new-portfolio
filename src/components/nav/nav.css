@@ -19,3 +19,9 @@ nav a {
   display: flex;
   font-size: 1.2rem;
 }
+
+nav a.active {
+  background: var(--color-bg);
+  color: var(--color-white);
+  border-radius: 15rem;
+}

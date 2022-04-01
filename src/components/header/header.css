@@ -54,6 +54,7 @@ header {
   margin-top: 4rem;
   overflow: hidden;
   border-radius: 12rem ;
+  background: linear-gradient(45deg, transparent, var(--color-primary), transparent);
 }
 
 .me img {
@@ -87,6 +88,12 @@ header {
 @media screen and (max-width: 600px) {
   header {
     height: 100vh;
+  }
+
+  .me {
+    width: 14rem;
+    height: 14rem;
+    left: calc(50% - 7rem);
   }
 
   .scroll__down {
