@@ -1,4 +1,5 @@
 import React from 'react';
+import { BiAbacus } from 'react-icons/bi';
 import PropTypes from 'prop-types';
 
 function Card({ iconName, technologyName }) {
@@ -16,7 +17,7 @@ function Card({ iconName, technologyName }) {
       <div className="experience__card-text-container">
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Magni blanditiis, dolores tenetur recusandae, molestiae ipsa,
+          Magni blanditiis, dolores tenetut recusandae, molestiae ipsa,
           illum quidem ipsum eius rerum culpa.
         </p>
       </div>
@@ -25,12 +26,12 @@ function Card({ iconName, technologyName }) {
 }
 
 Card.propTypes = {
-  iconName: PropTypes.string,
+  iconName: PropTypes.element,
   technologyName: PropTypes.string,
 };
 
 Card.defaultProps = {
-  iconName: 'nothing',
+  iconName: <BiAbacus />,
   technologyName: 'Not input name',
 };
 
