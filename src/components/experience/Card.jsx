@@ -1,8 +1,10 @@
 import React from 'react';
-import { BiAbacus } from 'react-icons/bi';
+import { CgSmileNone } from 'react-icons/cg';
 import PropTypes from 'prop-types';
 
-function Card({ iconName, technologyName }) {
+function Card({ iconName, technologyName, proyects }) {
+  const listProyects = proyects.split(',');
+
   return (
     <div className="experience__card-container">
       <div className="experience__card-img-container">
@@ -15,11 +17,9 @@ function Card({ iconName, technologyName }) {
         </div>
       </div>
       <div className="experience__card-text-container">
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Magni blanditiis, dolores tenetut recusandae, molestiae ipsa,
-          illum quidem ipsum eius rerum culpa.
-        </p>
+        <ul>
+          {listProyects.map((proyectItem) => <li>{proyectItem}</li>)}
+        </ul>
       </div>
     </div>
   );
@@ -28,11 +28,13 @@ function Card({ iconName, technologyName }) {
 Card.propTypes = {
   iconName: PropTypes.element,
   technologyName: PropTypes.string,
+  proyects: PropTypes.string,
 };
 
 Card.defaultProps = {
-  iconName: <BiAbacus />,
-  technologyName: 'Not input name',
+  iconName: <CgSmileNone className="experience__card-img" />,
+  technologyName: 'Not added technologyName',
+  proyects: 'none',
 };
 
 export default Card;
