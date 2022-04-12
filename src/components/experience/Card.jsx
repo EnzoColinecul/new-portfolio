@@ -18,7 +18,11 @@ function Card({ iconName, technologyName, proyects }) {
       </div>
       <div className="experience__card-text-container">
         <ul>
-          {listProyects.map((proyectItem) => <li>{proyectItem}</li>)}
+          {listProyects.map((proyectItem) => (
+            <li>
+              {proyectItem}
+            </li>
+          ))}
         </ul>
       </div>
     </div>
