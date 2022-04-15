@@ -25,6 +25,24 @@
   --container-width-sm: 90%;
 
   --transition: all 400ms ease;
+
+  /* ===== CARD ===== */
+  --card-size: 150;
+  --card-width: var(--card-size) * 2;
+  --card-border-radius: var(--card-size) * 0.1;
+
+  /* ==== CARD TITLE ==== */
+  --card-title:  --card-size * 0.21;
+
+  /* ==== CARD IMAGE ==== */
+  --card-image-width : --card-size * 0.5;
+  --card-image-heigth: --card-width *  0.9;
+  --card-image-margin-top : --card-size * 0.02; 
+
+  /* ==== CARD TITLE ==== */
+  --card-text-width: --card-size * 0.4;
+  --card-text-heigth: --card-width *  0.9;
+  --card-text-margin: --card-size * 0.05;
 }
 
 html {
