@@ -1,5 +1,5 @@
 import React from 'react';
-import { HiBadgeCheck } from 'react-icons/hi';
+import { FaCheck } from 'react-icons/fa';
 
 import './services.css';
 
@@ -15,24 +15,24 @@ function Services() {
           </div>
           <ul className="service__list">
             <li>
-              <HiBadgeCheck className="service__icon" />
-              <p>lorem ipsum</p>
+              <FaCheck className="service__icon" />
+              <p>Responsive Webs</p>
             </li>
             <li>
-              <HiBadgeCheck className="service__icon" />
-              <p>lorem ipsum</p>
+              <FaCheck className="service__icon" />
+              <p>Global and Immutable State</p>
             </li>
             <li>
-              <HiBadgeCheck className="service__icon" />
-              <p>lorem ipsum</p>
+              <FaCheck className="service__icon" />
+              <p>Scalable Data Architecture</p>
             </li>
             <li>
-              <HiBadgeCheck className="service__icon" />
-              <p>lorem ipsum</p>
+              <FaCheck className="service__icon" />
+              <p>API RESTful</p>
             </li>
             <li>
-              <HiBadgeCheck className="service__icon" />
-              <p>lorem ipsum</p>
+              <FaCheck className="service__icon" />
+              <p>Middleware Implementation</p>
             </li>
           </ul>
         </article>
@@ -43,16 +43,24 @@ function Services() {
           </div>
           <ul className="service__list">
             <li>
-              <HiBadgeCheck className="service__icon" />
-              <p>lorem ipsum</p>
+              <FaCheck className="service__icon" />
+              <p>Access Management on Cloud Platforms </p>
             </li>
             <li>
-              <HiBadgeCheck className="service__icon" />
-              <p>lorem ipsum</p>
+              <FaCheck className="service__icon" />
+              <p>Access Management on Premise</p>
             </li>
             <li>
-              <HiBadgeCheck className="service__icon" />
-              <p>lorem ipsum</p>
+              <FaCheck className="service__icon" />
+              <p>Automated Reports</p>
+            </li>
+            <li>
+              <FaCheck className="service__icon" />
+              <p>Scripting in Powershell</p>
+            </li>
+            <li>
+              <FaCheck className="service__icon" />
+              <p>Registers, Deletions and Modifications of Users</p>
             </li>
           </ul>
         </article>
