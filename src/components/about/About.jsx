@@ -28,7 +28,7 @@ function About() {
             Tengo conocimientos en:
             - Sistemas / Networking / Telefonia IP / Seguridad Informatica/ Programacion
           </p>
-          <a href="#contact" className="btn btn-primary">Contact Me</a>
+          {/* <a href="#contact" className="btn btn-primary">Contact Me</a> */}
         </div>
       </div>
     </section>
