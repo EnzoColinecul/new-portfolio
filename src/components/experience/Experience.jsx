@@ -8,8 +8,6 @@ import Slider from 'react-slick/lib/slider';
 import Card from './Card';
 
 import './experience.css';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
 
 function Experience() {
   const settings = {
