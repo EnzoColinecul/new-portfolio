@@ -1,0 +1,96 @@
+.contact__container {
+  width: 58%;
+  display: grid;
+  grid-template-columns: 30% 58%;
+  gap: 4rem;
+}
+
+.contact__options {
+  display: flex;
+  flex-direction: column;
+  text-align:  center;
+  gap: 2rem;
+}
+
+.contact__option {
+  border-radius: 0.8rem;
+  background: var(--color-bg-black);
+  padding: 1.2rem;
+  
+}
+
+.contact__option-title {
+  display: flex;
+  font-size: 1.2rem;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-bottom: 0.4rem;
+}
+
+.contact__option a {
+ margin-top: 0.4rem;
+ font-size: 0.8rem;
+ align-self: center;
+}
+
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.contact__form button {
+  align-self: center;
+  width: 50%;
+  transition: var(--transition);
+}
+
+
+input, textarea {
+  width: 100%;
+  padding: 1.2rem;
+  background: var(--color-bg-black);
+  border: 2px solid var(--color-bg-black);
+  border-radius: 0.8rem;
+  color: var(--color-white) !important;
+  resize: none;
+  transition: var(--transition);
+}
+
+input:focus, textarea:focus {
+  border: 2px solid var(--color-primary-variant);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+  -webkit-text-fill-color: white;
+    -webkit-box-shadow: 0 0 0 30px var(--color-bg-black) inset !important;
+}
+/* ============== MEDIA QUERIES (MEDIUM DEVICES) ============ */
+
+@media screen and (max-width: 1024px) {
+  .contact__container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .contact__form::before{
+    content: "";
+    width: 45%;
+    height: 1px;
+    background: var(--color-bg-black);
+    align-self: center;
+  }
+}
+
+/* ============== MEDIA QUERIES (SMALL DEVICES) ============ */
+  
+@media screen and (max-width: 600px) {
+  .contact__container {
+    width: var(--container-width-sm);
+  }
+}
