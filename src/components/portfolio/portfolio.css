@@ -9,7 +9,7 @@
   flex-direction: row;
   height: fit-content;
   width: 42rem;
-  border-radius: 2rem;
+  border-radius: 0.8rem;
   background: var(--color-bg-black);
   align-items: center;
 }
@@ -17,7 +17,7 @@
 .portfolio__img img{
   width: 300px;
   height: 400px;
-  border-radius: 2rem;
+  border-radius: 0.8rem;
 }
 
 .portfolio__content {
@@ -87,7 +87,6 @@
   .portfolio__img img{
     width: 200px;
     height: 300px;
-    border-radius: 2rem;
   }
 
   .portfolio__content {

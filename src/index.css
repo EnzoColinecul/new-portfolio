@@ -123,6 +123,17 @@ a:hover {
   color: var(--color-bg);
 }
 
+.btn-disabled  {
+  cursor: not-allowed;
+  opacity: 0.6;
+  width: max-content;
+  display: inline-block;
+  padding: 0.75rem 1.2rem;
+  border-radius: 0.4rem;
+  border: none
+}
+
+
 .btn-rounded {
   width: 3rem;
   height: 3rem;
