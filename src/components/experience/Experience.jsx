@@ -67,9 +67,6 @@ function Experience() {
           technologyName="Ionic"
           proyects="VoIP App"
         />
-        <Card
-          iconName={<FaAws className="experience__card-img" />}
-        />
       </Slider>
     </section>
   );
