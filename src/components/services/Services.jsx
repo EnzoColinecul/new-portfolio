@@ -20,7 +20,7 @@ function Services() {
             </li>
             <li>
               <FaCheck className="service__icon" />
-              <p>Global and Immutable State</p>
+              <p>Webs With Global and Immutable State</p>
             </li>
             <li>
               <FaCheck className="service__icon" />
@@ -28,11 +28,7 @@ function Services() {
             </li>
             <li>
               <FaCheck className="service__icon" />
-              <p>API RESTful</p>
-            </li>
-            <li>
-              <FaCheck className="service__icon" />
-              <p>Middleware Implementation</p>
+              <p>API REST</p>
             </li>
           </ul>
         </article>
@@ -48,7 +44,7 @@ function Services() {
             </li>
             <li>
               <FaCheck className="service__icon" />
-              <p>Access Management on Premise</p>
+              <p>Access Management on Premise Platforms</p>
             </li>
             <li>
               <FaCheck className="service__icon" />

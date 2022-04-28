@@ -12,7 +12,7 @@ function HeaderSocials() {
       <a href="https://github.com/EnzoColinecul/" target="_blank" rel="noreferrer">
         <BsGithub />
       </a>
-      <a href="http://" target="_blank" rel="noreferrer">
+      <a href="mailto:enzocolinecul1997@gmail.com" target="_blank" rel="noreferrer">
         <IoMdMail />
       </a>
     </div>
