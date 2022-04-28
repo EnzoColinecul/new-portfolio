@@ -4,6 +4,7 @@ import Slider from 'react-slick/lib/slider';
 import Image1 from '../../assets/images/portf-rym.png';
 import Image2 from '../../assets/images/portf-calculator.png';
 import Image3 from '../../assets/images/portf-voip.png';
+import Image4 from '../../assets/images/portf-realstate.png';
 import './portfolio.css';
 import Project from './Project';
 
@@ -34,7 +35,7 @@ function Portfolio() {
     {
       title: 'Rick and Morty',
       img: Image1,
-      description: 'Es un proyecto que nacio con la idea de poner a prueba mis conocimientos en JavaScript, React, Redux, Firebase, Tailwind y Git. Se utilizo la metodologia Kanban  ',
+      description: 'It is a project that was born with the idea of ​​testing my knowledge in JavaScript, React, Redux, Firebase, Tailwind and Git. The Kanban methodology was used.',
       repositoryLink: 'https://github.com/EnzoColinecul/rick-and-morty-app',
       demo: 'https://enzocolinecul.github.io/rick-and-morty-app/',
     },
@@ -42,13 +43,20 @@ function Portfolio() {
       title: 'Calculator',
       img: Image2,
       repositoryLink: 'https://github.com/EnzoColinecul/calculator',
-      description: 'Calculadora realizada en React-Native y Typescript',
+      description: 'Calculator made in React-Native and Typescript',
     },
     {
       title: 'VoIP App',
       img: Image3,
       repositoryLink: 'https://github.com/EnzoColinecul/Voip-react',
-      description: 'Proyecto de tesis para la carrera de telecomunicaciones, una aplicacion multiplataforma el servidor de comun esta alojado en una instancia EC2 de AWS',
+      description: 'Thesis project for the telecommunications career, a multiplatform application the communications server is hosted on an AWS EC2 instance.',
+    },
+    {
+      title: 'RealState',
+      img: Image4,
+      repositoryLink: 'https://github.com/EnzoColinecul/Realstate-react-materialUI',
+      description: 'portal to load real estate, made with Material-UI',
+
     },
   ];
   return (
