@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
-import { FaNodeJs, FaReact, FaAws } from 'react-icons/fa';
+import { FaNodeJs, FaReact } from 'react-icons/fa';
 import {
   SiRedux, SiFirebase, SiMongodb, SiIonic,
 } from 'react-icons/si';
