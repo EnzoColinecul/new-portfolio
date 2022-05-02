@@ -32,41 +32,51 @@ function Experience() {
     ],
   };
 
+  const cards = [
+    {
+      technologyName: 'React',
+      iconName: <FaReact className="experience__card-img" />,
+      proyects: ' This Portfolio, VoIP App, Rick and Morty App, Simple Calculator (React Native), Journal App, Realstate',
+    },
+    {
+      technologyName: 'Node JS',
+      iconName: <FaNodeJs className="experience__card-img" />,
+      proyects: ' Internal App (Naranja x), Calendar (Backend)',
+    },
+    {
+      technologyName: 'Redux',
+      iconName: <SiRedux className="experience__card-img" />,
+      proyects: ' VoIP App, Rick And Morty App, Journal App',
+    },
+    {
+      technologyName: 'Firebase',
+      iconName: <SiFirebase className="experience__card-img" />,
+      proyects: ' Rick And Morty App, Journal App',
+    },
+    {
+      iconName: <SiMongodb className="experience__card-img" />,
+      technologyName: 'MongoDB',
+      proyects: 'Internal App (Naranja x), Calendar (Backend)',
+    },
+    {
+      iconName: <SiIonic className="experience__card-img" />,
+      technologyName: 'Ionic',
+      proyects: 'VoIP App',
+    },
+  ];
+
   return (
     <section id="experience">
       <h5>What Skill  I Have</h5>
       <h2>My Experience</h2>
       <Slider className="experience__container" {...settings}>
-        <Card
-          iconName={<FaReact className="experience__card-img" />}
-          technologyName="React"
-          proyects=" This Portfolio, VoIP App, Rick and Morty App, Simple Calculator (React Native)"
-        />
-        <Card
-          iconName={<FaNodeJs className="experience__card-img" />}
-          technologyName="Node JS"
-          proyects=" Internal App (Naranja x)"
-        />
-        <Card
-          iconName={<SiRedux className="experience__card-img" />}
-          technologyName="Redux"
-          proyects=" VoIP App, Rick And Morty App"
-        />
-        <Card
-          iconName={<SiFirebase className="experience__card-img" />}
-          technologyName="Firebase"
-          proyects=" Rick And Morty App"
-        />
-        <Card
-          iconName={<SiMongodb className="experience__card-img" />}
-          technologyName="MongoDB"
-          proyects="Internal App (Naranja x)"
-        />
-        <Card
-          iconName={<SiIonic className="experience__card-img" />}
-          technologyName="Ionic"
-          proyects="VoIP App"
-        />
+        {cards.map(({ iconName, technologyName, proyects }) => (
+          <Card
+            iconName={iconName}
+            technologyName={technologyName}
+            proyects={proyects}
+          />
+        ))}
       </Slider>
     </section>
   );
