@@ -1,22 +1,25 @@
 {
   "files": {
-    "main.css": "/new-portfolio/static/css/main.eee98753.css",
-    "main.js": "/new-portfolio/static/js/main.28adaf1e.js",
+    "main.css": "/new-portfolio/static/css/main.4e016180.css",
+    "main.js": "/new-portfolio/static/js/main.e6fecd62.js",
+    "static/media/portf-realstate.png": "/new-portfolio/static/media/portf-realstate.d704f1e1064a686d2d96.png",
     "static/media/portf-rym.png": "/new-portfolio/static/media/portf-rym.21d01267299a252d2e57.png",
     "static/media/portf-calculator.png": "/new-portfolio/static/media/portf-calculator.8adf3fc3fc2cfcaf018a.png",
+    "static/media/portf-kimchallenge.png": "/new-portfolio/static/media/portf-kimchallenge.bf32f5a715d2756a4a56.png",
     "static/media/portf-voip.png": "/new-portfolio/static/media/portf-voip.dd7fbc4fa516ac694c6b.png",
     "static/media/me2.jpeg": "/new-portfolio/static/media/me2.aa7817b68fb60ffd4781.jpeg",
-    "static/media/Enzo_Colinecul_CV.pdf": "/new-portfolio/static/media/Enzo_Colinecul_CV.a953df6c3c8425c60237.pdf",
+    "static/media/me-header.jpg": "/new-portfolio/static/media/me-header.a5876e2da1a680deba8f.jpg",
+    "static/media/Enzo_Colinecul_CV-may-2022.pdf": "/new-portfolio/static/media/Enzo_Colinecul_CV-may-2022.2c4420f82fa911e11384.pdf",
     "static/media/slick.svg": "/new-portfolio/static/media/slick.2630a3e3eab21c607e21.svg",
     "static/media/slick.eot": "/new-portfolio/static/media/slick.a4e97f5a2a64f0ab1323.eot",
     "static/media/slick.ttf": "/new-portfolio/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/new-portfolio/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/new-portfolio/index.html",
-    "main.eee98753.css.map": "/new-portfolio/static/css/main.eee98753.css.map",
-    "main.28adaf1e.js.map": "/new-portfolio/static/js/main.28adaf1e.js.map"
+    "main.4e016180.css.map": "/new-portfolio/static/css/main.4e016180.css.map",
+    "main.e6fecd62.js.map": "/new-portfolio/static/js/main.e6fecd62.js.map"
   },
   "entrypoints": [
-    "static/css/main.eee98753.css",
-    "static/js/main.28adaf1e.js"
+    "static/css/main.4e016180.css",
+    "static/js/main.e6fecd62.js"
   ]
 }
