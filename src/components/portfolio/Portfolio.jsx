@@ -5,6 +5,7 @@ import Image1 from '../../assets/images/portf-rym.png';
 import Image2 from '../../assets/images/portf-calculator.png';
 import Image3 from '../../assets/images/portf-voip.png';
 import Image4 from '../../assets/images/portf-realstate.png';
+import Image5 from '../../assets/images/portf-kimchallenge.png';
 import './portfolio.css';
 import Project from './Project';
 
@@ -40,16 +41,23 @@ function Portfolio() {
       demo: 'https://enzocolinecul.github.io/rick-and-morty-app/',
     },
     {
+      title: 'VoIP App',
+      img: Image3,
+      repositoryLink: 'https://github.com/EnzoColinecul/Voip-react',
+      description: 'Thesis project for the telecommunications career, a multiplatform application, the communications server is hosted on an AWS EC2 instance.',
+    },
+    {
+      title: 'Country Search',
+      img: Image5,
+      description: 'Web developed for a challenge, first time using graphql and apollo client.',
+      repositoryLink: 'https://github.com/EnzoColinecul/kimchechallenge',
+      demo: 'https://enzocolinecul.github.io/kimchechallenge/',
+    },
+    {
       title: 'Calculator',
       img: Image2,
       repositoryLink: 'https://github.com/EnzoColinecul/calculator',
       description: 'Calculator made in React-Native and Typescript',
-    },
-    {
-      title: 'VoIP App',
-      img: Image3,
-      repositoryLink: 'https://github.com/EnzoColinecul/Voip-react',
-      description: 'Thesis project for the telecommunications career, a multiplatform application the communications server is hosted on an AWS EC2 instance.',
     },
     {
       title: 'RealState',

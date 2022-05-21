@@ -51,7 +51,7 @@ function Contact() {
         <form ref={form} onSubmit={sendEmail} className="contact__form">
           <input type="text" name="name" placeholder="Your Full Name" required />
           <input type="email" name="email" placeholder="Your Email" required />
-          <textarea name="message" placeholder="Your Messa ge" cols="30" rows="10" required />
+          <textarea name="message" placeholder="Your Message" cols="30" rows="10" required />
           <button type="submit" className={disableButton ? 'btn-disabled' : 'btn btn-primary'}>Submit</button>
         </form>
       </div>
