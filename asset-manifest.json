@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/new-portfolio/static/css/main.4e016180.css",
-    "main.js": "/new-portfolio/static/js/main.e6fecd62.js",
+    "main.css": "/new-portfolio/static/css/main.81987e18.css",
+    "main.js": "/new-portfolio/static/js/main.b2d420e3.js",
     "static/media/portf-realstate.png": "/new-portfolio/static/media/portf-realstate.d704f1e1064a686d2d96.png",
     "static/media/portf-rym.png": "/new-portfolio/static/media/portf-rym.21d01267299a252d2e57.png",
     "static/media/portf-calculator.png": "/new-portfolio/static/media/portf-calculator.8adf3fc3fc2cfcaf018a.png",
@@ -15,11 +15,11 @@
     "static/media/slick.ttf": "/new-portfolio/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/new-portfolio/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/new-portfolio/index.html",
-    "main.4e016180.css.map": "/new-portfolio/static/css/main.4e016180.css.map",
-    "main.e6fecd62.js.map": "/new-portfolio/static/js/main.e6fecd62.js.map"
+    "main.81987e18.css.map": "/new-portfolio/static/css/main.81987e18.css.map",
+    "main.b2d420e3.js.map": "/new-portfolio/static/js/main.b2d420e3.js.map"
   },
   "entrypoints": [
-    "static/css/main.4e016180.css",
-    "static/js/main.e6fecd62.js"
+    "static/css/main.81987e18.css",
+    "static/js/main.b2d420e3.js"
   ]
 }
