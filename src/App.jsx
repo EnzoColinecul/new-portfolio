@@ -1,9 +1,10 @@
-import React from 'react';
 import { Toaster } from 'react-hot-toast';
 import Header from './components/header/Header';
 import Nav from './components/nav/Nav';
 import About from './components/about/About';
-import Experience from './components/experience/Experience';
+import Timeline from './components/timeline/Timeline';
+import Skills from './components/skills/Skills';
+import Certifications from './components/certifications/Certifications';
 import Services from './components/services/Services';
 import Portfolio from './components/portfolio/Portfolio';
 import Contact from './components/contact/Contact';
@@ -20,7 +21,9 @@ function App() {
       <Header />
       <Nav />
       <About />
-      <Experience />
+      <Timeline />
+      <Skills />
+      <Certifications />
       <Services />
       <Portfolio />
       <Contact />

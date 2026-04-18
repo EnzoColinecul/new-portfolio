@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { BsGithub, BsLinkedin } from 'react-icons/bs';
 import { IoMdMail } from 'react-icons/io';
 

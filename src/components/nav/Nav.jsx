@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 import { AiOutlineHome, AiOutlineUser } from 'react-icons/ai';
-import { RiContactsBook2Line, RiServiceLine } from 'react-icons/ri';
 import { BiBook } from 'react-icons/bi';
+import { GiAchievement } from 'react-icons/gi';
+import { RiContactsBook2Line, RiServiceLine } from 'react-icons/ri';
 
 import './nav.css';
 
@@ -16,8 +17,11 @@ function Nav() {
       <a href="#about" onClick={() => setActive('#about')} className={active === '#about' ? 'active' : ''}>
         <AiOutlineUser />
       </a>
-      <a href="#experience" onClick={() => setActive('#experience')} className={active === '#experience' ? 'active' : ''}>
+      <a href="#skills" onClick={() => setActive('#skills')} className={active === '#skills' ? 'active' : ''}>
         <BiBook />
+      </a>
+      <a href="#certifications" onClick={() => setActive('#certifications')} className={active === '#certifications' ? 'active' : ''}>
+        <GiAchievement />
       </a>
       <a href="#services" onClick={() => setActive('#services')} className={active === '#services' ? 'active' : ''}>
         <RiServiceLine />

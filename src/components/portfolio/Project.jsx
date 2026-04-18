@@ -1,8 +1,7 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import { AiTwotonePlayCircle } from 'react-icons/ai';
 import { BsGithub } from 'react-icons/bs';
 import { CgSmileNone } from 'react-icons/cg';
-import { AiTwotonePlayCircle } from 'react-icons/ai';
 
 function Project({
   img, title, description, repositoryLink, demo,

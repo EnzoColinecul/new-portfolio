@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { FaCheck } from 'react-icons/fa';
 
 import './services.css';
@@ -11,52 +11,94 @@ function Services() {
       <div className="container services__container">
         <article className="service">
           <div className="service__head">
-            <h3>Web Development</h3>
+            <h3>Cloud Security & IAM</h3>
           </div>
           <ul className="service__list">
             <li>
               <FaCheck className="service__icon" />
-              <p>Responsive Webs</p>
+              <p>Multi-Cloud IAM (AWS, GCP, Azure)</p>
             </li>
             <li>
               <FaCheck className="service__icon" />
-              <p>Webs With Global and Immutable State</p>
+              <p>IAM Policy Design & Implementation</p>
             </li>
             <li>
               <FaCheck className="service__icon" />
-              <p>Scalable Data Architecture</p>
+              <p>Security Automation & Workflows</p>
             </li>
             <li>
               <FaCheck className="service__icon" />
-              <p>API REST</p>
+              <p>Access Management Automation</p>
+            </li>
+            <li>
+              <FaCheck className="service__icon" />
+              <p>Security Audits & Compliance</p>
+            </li>
+            <li>
+              <FaCheck className="service__icon" />
+              <p>Temporary Credential Delivery Systems</p>
             </li>
           </ul>
         </article>
-        {/* Cybersecurity */}
         <article className="service">
           <div className="service__head">
-            <h3>Cybersecurity - IAM </h3>
+            <h3>Backend Development & APIs</h3>
           </div>
           <ul className="service__list">
             <li>
               <FaCheck className="service__icon" />
-              <p>Access Management on Cloud Platforms </p>
+              <p>RESTful API Development</p>
             </li>
             <li>
               <FaCheck className="service__icon" />
-              <p>Access Management on Premise Platforms</p>
+              <p>Python (FastAPI, Flask)</p>
             </li>
             <li>
               <FaCheck className="service__icon" />
-              <p>Automated Reports</p>
+              <p>Node.js Backend Services</p>
             </li>
             <li>
               <FaCheck className="service__icon" />
-              <p>Scripting in Powershell</p>
+              <p>Cloud Services Integration (Lambda, DynamoDB, BigQuery)</p>
             </li>
             <li>
               <FaCheck className="service__icon" />
-              <p>Registers, Deletions and Modifications of Users</p>
+              <p>Database Design & Management</p>
+            </li>
+            <li>
+              <FaCheck className="service__icon" />
+              <p>API Gateway Configuration</p>
+            </li>
+          </ul>
+        </article>
+        <article className="service">
+          <div className="service__head">
+            <h3>Infrastructure & DevOps</h3>
+          </div>
+          <ul className="service__list">
+            <li>
+              <FaCheck className="service__icon" />
+              <p>Infrastructure as Code (Terraform)</p>
+            </li>
+            <li>
+              <FaCheck className="service__icon" />
+              <p>Containerization (Docker)</p>
+            </li>
+            <li>
+              <FaCheck className="service__icon" />
+              <p>CI/CD Pipelines (GitHub Actions)</p>
+            </li>
+            <li>
+              <FaCheck className="service__icon" />
+              <p>Cloud Infrastructure Management</p>
+            </li>
+            <li>
+              <FaCheck className="service__icon" />
+              <p>Multi-Account AWS Solutions</p>
+            </li>
+            <li>
+              <FaCheck className="service__icon" />
+              <p>Serverless Architecture</p>
             </li>
           </ul>
         </article>

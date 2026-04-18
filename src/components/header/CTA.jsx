@@ -1,5 +1,5 @@
-import React from 'react';
-import CV from '../../assets/pdf/Enzo_Colinecul_CV-may-2022.pdf';
+
+import CV from '../../assets/pdf/Enzo_Ariel_Colinecul_CV.pdf';
 
 function CTA() {
   return (

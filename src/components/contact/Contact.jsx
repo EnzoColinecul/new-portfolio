@@ -1,10 +1,10 @@
-import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
-import { IoMdMail } from 'react-icons/io';
+import { useRef, useState } from 'react';
 import { AiOutlineWhatsApp } from 'react-icons/ai';
+import { IoMdMail } from 'react-icons/io';
 
-import './contact.css';
 import toast from 'react-hot-toast';
+import './contact.css';
 
 function Contact() {
   const form = useRef();
@@ -44,8 +44,8 @@ function Contact() {
               <AiOutlineWhatsApp className="contact__option-icon" />
               <h4>WhatsApp</h4>
             </div>
-            <h5>+542945403209</h5>
-            <a href="https://api.whatsapp.com/send?phone=+542945403209" target="_blank" rel="noreferrer">Send Message</a>
+            <h5>+64 027 361 2686</h5>
+            <a href="https://api.whatsapp.com/send?phone=+640273612686" target="_blank" rel="noreferrer">Send Message</a>
           </article>
         </div>
         <form ref={form} onSubmit={sendEmail} className="contact__form">
