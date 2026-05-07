@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/new-portfolio/static/css/main.9bbf492b.css",
-    "main.js": "/new-portfolio/static/js/main.ba8cba76.js",
+    "main.css": "/new-portfolio/static/css/main.b7c0cbd2.css",
+    "main.js": "/new-portfolio/static/js/main.c5c0acdb.js",
     "static/media/splitea-icon.png": "/new-portfolio/static/media/splitea-icon.56ba610bfaf4d72da5d1.png",
     "static/media/portf-realstate.png": "/new-portfolio/static/media/portf-realstate.d704f1e1064a686d2d96.png",
     "static/media/portf-rym.png": "/new-portfolio/static/media/portf-rym.21d01267299a252d2e57.png",
@@ -17,11 +17,11 @@
     "static/media/slick.ttf": "/new-portfolio/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/new-portfolio/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/new-portfolio/index.html",
-    "main.9bbf492b.css.map": "/new-portfolio/static/css/main.9bbf492b.css.map",
-    "main.ba8cba76.js.map": "/new-portfolio/static/js/main.ba8cba76.js.map"
+    "main.b7c0cbd2.css.map": "/new-portfolio/static/css/main.b7c0cbd2.css.map",
+    "main.c5c0acdb.js.map": "/new-portfolio/static/js/main.c5c0acdb.js.map"
   },
   "entrypoints": [
-    "static/css/main.9bbf492b.css",
-    "static/js/main.ba8cba76.js"
+    "static/css/main.b7c0cbd2.css",
+    "static/js/main.c5c0acdb.js"
   ]
 }
