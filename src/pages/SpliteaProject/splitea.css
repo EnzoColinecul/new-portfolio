@@ -918,6 +918,7 @@
   gap: 1rem;
   width: 100%;
   max-width: 1180px;
+  min-height: 70vh;
 }
 
 .splitea-closing__eyebrow {
@@ -978,40 +979,109 @@
 }
 
 .splitea-closing__back {
-  position: absolute;
-  bottom: 2.5rem;
-  left: 6vw;
   font-family: var(--s-mono);
   font-size: 0.78rem;
   color: rgba(255, 255, 255, 0.85);
   text-decoration: none;
   letter-spacing: 0.12em;
   text-transform: uppercase;
+  margin-top: auto;
+  padding-top: 3rem;
+  display: inline-block;
 }
 
 .splitea-closing__back:hover { color: var(--s-bg-card); }
 
 /* ===== RESPONSIVE ===== */
+
+/* Tablet — 1100px */
 @media (max-width: 1100px) {
   .splitea-grid--four { grid-template-columns: repeat(2, 1fr); }
   .splitea-grid--three { grid-template-columns: 1fr; }
-  .splitea-product__layout { grid-template-columns: 1fr; gap: 3rem; justify-items: center; }
-  .splitea-arch__diagram { grid-template-columns: 1fr; }
-  .splitea-arch__arrow { transform: rotate(90deg); justify-self: center; }
+
+  .splitea-product__layout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    min-height: 0;
+    justify-items: center;
+  }
+  .splitea-product__left { max-width: 640px; width: 100%; }
+  .splitea-phone { width: 300px; height: 560px; }
+
+  .splitea-arch__diagram {
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+  }
+  .splitea-arch__arrow {
+    transform: rotate(90deg);
+    justify-self: center;
+    line-height: 1;
+  }
+  .splitea-arch__column { flex-direction: row; flex-wrap: wrap; gap: 0.6rem; }
+  .splitea-arch__column .splitea-arch__node { flex: 1; min-width: 160px; }
+
   .splitea-flow { grid-template-columns: repeat(2, 1fr); }
   .splitea-flow__step { min-height: 0; }
+
   .splitea-roadmap__grid { grid-template-columns: repeat(2, 1fr); }
 }
 
-@media (max-width: 600px) {
-  .splitea-section { padding: 4rem 5vw; min-height: auto; }
-  .splitea-brand { left: 5vw; top: 1.2rem; }
+/* Mobile — 768px */
+@media (max-width: 768px) {
+  .splitea-section {
+    padding: 5rem 5vw 3rem;
+    min-height: 100svh;
+    min-height: 100dvh;
+    align-items: flex-start;
+  }
+  .splitea-section__inner { padding-top: 1rem; }
+
+  .splitea-headline { font-size: clamp(1.9rem, 6vw, 2.8rem); }
+  .splitea-lede { font-size: 1rem; margin-bottom: 1.8rem; }
+
+  .splitea-product__layout { gap: 2rem; }
+  .splitea-phone { width: 260px; height: 500px; }
+  .splitea-phone__balance-value { font-size: 1.3rem; }
+
+  .splitea-stats { grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+  .splitea-stat__value { font-size: 1.5rem; }
+
+  .splitea-flow { grid-template-columns: 1fr 1fr; }
+  .splitea-flow__step { padding: 1.2rem; }
+
+  .splitea-roadmap__grid { grid-template-columns: 1fr 1fr; }
+
+  .splitea-closing__headline { font-size: clamp(2.8rem, 9vw, 4rem); }
+  .splitea-closing__contact { margin-top: 2rem; }
+}
+
+/* Small mobile — 480px */
+@media (max-width: 480px) {
+  .splitea-section { padding: 4.5rem 4vw 2.5rem; }
+  .splitea-brand { left: 4vw; top: 1rem; }
+
+  .splitea-cover__title { width: 100%; max-width: 320px; }
+  .splitea-cover__tagline { font-size: 1.2rem; }
+  .splitea-cover__subtitle { font-size: 0.95rem; }
+
   .splitea-grid--four { grid-template-columns: 1fr; }
-  .splitea-stats { grid-template-columns: 1fr; gap: 1.2rem; }
+  .splitea-stats { grid-template-columns: 1fr; gap: 1rem; }
+
+  .splitea-product__layout { grid-template-columns: 1fr; }
+  .splitea-phone {
+    width: min(280px, 85vw);
+    height: 480px;
+    margin: 0 auto;
+  }
+
   .splitea-flow { grid-template-columns: 1fr; }
   .splitea-roadmap__grid { grid-template-columns: 1fr; }
-  .splitea-cover__logo { width: 72px; height: 72px; margin-bottom: 1.8rem; }
-  .splitea-phone { width: 280px; height: 540px; }
+
+  .splitea-arch__column { flex-direction: column; }
+  .splitea-arch__column .splitea-arch__node { min-width: 0; }
+
+  .splitea-closing__headline { font-size: clamp(2.4rem, 10vw, 3.5rem); }
+  .splitea-closing__email { font-size: 1rem; word-break: break-all; }
 }
 
 /* ===== REDUCED MOTION ===== */
