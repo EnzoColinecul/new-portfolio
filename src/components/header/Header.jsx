@@ -14,7 +14,7 @@ function Header() {
         <h5>Hello I&apos;m</h5>
         <h1>Enzo Ariel Colinecul</h1>
         <Typical
-          steps={['Cybersecurity Engineer', 2000, 'IAM Security Engineer', 2000, 'Software Engineer', 2000]}
+          steps={['Cybersecurity Engineer', 2000, 'IAM Security Engineer', 2000, 'AI Automation Engineer', 2000]}
           loop={Infinity}
           wrapper="h5"
         />
