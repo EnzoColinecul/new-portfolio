@@ -1,0 +1,114 @@
+/* ============================================================
+   Splitea featured CTA — attention-grabbing pulse button
+   ============================================================ */
+
+.splitea-cta-wrapper {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+.splitea-cta {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.95rem 1.8rem;
+  background: linear-gradient(135deg, #FF7A1A 0%, #FFB066 100%);
+  color: #0F1A2A;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 999px;
+  text-decoration: none;
+  box-shadow:
+    0 8px 24px -6px rgba(255, 122, 26, 0.55),
+    0 0 0 0 rgba(255, 122, 26, 0.5);
+  transition: transform 250ms ease, box-shadow 250ms ease;
+  animation: splitea-cta-bob 3s ease-in-out infinite;
+  isolation: isolate;
+}
+
+.splitea-cta:hover {
+  transform: translateY(-3px) scale(1.04);
+  color: #0F1A2A;
+  box-shadow:
+    0 14px 32px -8px rgba(255, 122, 26, 0.75),
+    0 0 0 6px rgba(255, 122, 26, 0.18);
+}
+
+.splitea-cta:active {
+  transform: translateY(0) scale(1);
+}
+
+.splitea-cta__ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  border: 2px solid #FF7A1A;
+  opacity: 0;
+  animation: splitea-cta-pulse 2.2s ease-out infinite;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.splitea-cta:hover .splitea-cta__ring {
+  animation-play-state: paused;
+}
+
+.splitea-cta__inner {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.splitea-cta__spark {
+  width: 18px;
+  height: 18px;
+  color: #0F1A2A;
+  animation: splitea-cta-spark 1.6s ease-in-out infinite;
+}
+
+.splitea-cta__arrow {
+  font-size: 1.1rem;
+  font-weight: 800;
+  transition: transform 200ms ease;
+}
+
+.splitea-cta:hover .splitea-cta__arrow {
+  transform: translateX(4px);
+}
+
+/* ===== Animations ===== */
+@keyframes splitea-cta-bob {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-3px); }
+}
+
+@keyframes splitea-cta-pulse {
+  0%   { opacity: 0.7; transform: scale(1); }
+  80%  { opacity: 0; transform: scale(1.35); }
+  100% { opacity: 0; transform: scale(1.35); }
+}
+
+@keyframes splitea-cta-spark {
+  0%, 100% { transform: rotate(0) scale(1); }
+  50%      { transform: rotate(15deg) scale(1.15); }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+  .splitea-cta-wrapper { margin-top: 1.5rem; }
+  .splitea-cta {
+    font-size: 0.9rem;
+    padding: 0.8rem 1.4rem;
+  }
+  .splitea-cta__ring { display: none; }
+}
+
+/* ===== Reduced motion ===== */
+@media (prefers-reduced-motion: reduce) {
+  .splitea-cta,
+  .splitea-cta__ring,
+  .splitea-cta__spark { animation: none; }
+}

@@ -1,5 +1,6 @@
 import Typical from 'react-typical';
 import CTA from './CTA';
+import SpliteaCTA from './SpliteaCTA';
 
 import ME from '../../assets/images/me-new.jpeg';
 import HeaderSocials from './HeaderSocials';
@@ -17,6 +18,7 @@ function Header() {
           loop={Infinity}
           wrapper="h5"
         />
+        <SpliteaCTA />
         <CTA />
         <HeaderSocials />
         <div className="me">
