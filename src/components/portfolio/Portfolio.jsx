@@ -6,6 +6,7 @@ import Image4 from '../../assets/images/portf-realstate.png';
 import Image1 from '../../assets/images/portf-rym.png';
 import Image3 from '../../assets/images/portf-voip.png';
 import ImageSplitea from '../../assets/images/splitea.png';
+import ImageCrystal from '../../assets/images/crystal-logo-ai.png';
 import ImageMafia from '../../assets/images/mafia.png';
 import './portfolio.css';
 import Project from './Project';
@@ -35,9 +36,16 @@ function Portfolio() {
 
   const repositories = [
     {
+      title: 'Crystal Carpet Clean',
+      img: ImageCrystal,
+      description: 'Conversion-focused website for a professional carpet and upholstery cleaning business in Auckland, NZ. Built to earn trust and turn visitors into bookings.',
+      demo: 'https://crystalcarpetclean.vercel.app/',
+    },
+    {
       title: 'Splitea',
-      img: ImageSplitea, // Placeholder - you may want to add a specific image
+      img: ImageSplitea,
       description: 'React Native + Python FastAPI application for expense sharing and management. Features Docker containerization, Alembic database migrations, and follows best practices with Flake8 linting.',
+      caseStudy: '/splitea-project',
     },
     {
       title: 'Mafia Game (Frontend)',
@@ -74,11 +82,11 @@ function Portfolio() {
   ];
   return (
     <section id="portfolio">
-      <h5>My Personal Projects</h5>
+      <h5>My Projects</h5>
       <h2>Portfolio</h2>
       <Slider className="portfolio__container" {...settings}>
         {repositories.map(({
-          title, img, repositoryLink, description, demo,
+          title, img, repositoryLink, description, demo, caseStudy,
         }) => (
           <Project
             key={title}
@@ -87,6 +95,7 @@ function Portfolio() {
             img={img}
             repositoryLink={repositoryLink}
             demo={demo}
+            caseStudy={caseStudy}
           />
         ))}
       </Slider>

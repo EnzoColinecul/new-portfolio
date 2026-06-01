@@ -1,10 +1,12 @@
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import { AiTwotonePlayCircle } from 'react-icons/ai';
 import { BsGithub } from 'react-icons/bs';
 import { CgSmileNone } from 'react-icons/cg';
+import { MdOutlineOpenInNew } from 'react-icons/md';
 
 function Project({
-  img, title, description, repositoryLink, demo,
+  img, title, description, repositoryLink, demo, caseStudy,
 }) {
   return (
     <div className="portfolio__item">
@@ -29,6 +31,12 @@ function Project({
               Live Demo
             </a>
           )}
+          {caseStudy === null ? '' : (
+            <Link to={caseStudy} className="btn btn-primary">
+              <MdOutlineOpenInNew />
+              Case Study
+            </Link>
+          )}
         </div>
       </div>
     </div>
@@ -41,6 +49,7 @@ Project.propTypes = {
   description: PropTypes.string,
   repositoryLink: PropTypes.string,
   demo: PropTypes.string,
+  caseStudy: PropTypes.string,
 };
 
 Project.defaultProps = {
@@ -49,6 +58,7 @@ Project.defaultProps = {
   description: 'No Description',
   repositoryLink: null,
   demo: null,
+  caseStudy: null,
 };
 
 export default Project;
