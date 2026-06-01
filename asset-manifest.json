@@ -1,10 +1,11 @@
 {
   "files": {
-    "main.css": "/new-portfolio/static/css/main.b7c0cbd2.css",
-    "main.js": "/new-portfolio/static/js/main.c5c0acdb.js",
+    "main.css": "/new-portfolio/static/css/main.46b34341.css",
+    "main.js": "/new-portfolio/static/js/main.fc202846.js",
     "static/media/splitea-icon.png": "/new-portfolio/static/media/splitea-icon.56ba610bfaf4d72da5d1.png",
     "static/media/portf-realstate.png": "/new-portfolio/static/media/portf-realstate.d704f1e1064a686d2d96.png",
     "static/media/portf-rym.png": "/new-portfolio/static/media/portf-rym.21d01267299a252d2e57.png",
+    "static/media/crystal-logo-ai.png": "/new-portfolio/static/media/crystal-logo-ai.7c18e21bf57dfc007b2f.png",
     "static/media/splitea.png": "/new-portfolio/static/media/splitea.086215b92dcd71e3df51.png",
     "static/media/me-new.jpeg": "/new-portfolio/static/media/me-new.9d966e844565027d8ec3.jpeg",
     "static/media/me-2-new.jpg": "/new-portfolio/static/media/me-2-new.cf8aa0f497b0fa94a6d6.jpg",
@@ -17,11 +18,11 @@
     "static/media/slick.ttf": "/new-portfolio/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/new-portfolio/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/new-portfolio/index.html",
-    "main.b7c0cbd2.css.map": "/new-portfolio/static/css/main.b7c0cbd2.css.map",
-    "main.c5c0acdb.js.map": "/new-portfolio/static/js/main.c5c0acdb.js.map"
+    "main.46b34341.css.map": "/new-portfolio/static/css/main.46b34341.css.map",
+    "main.fc202846.js.map": "/new-portfolio/static/js/main.fc202846.js.map"
   },
   "entrypoints": [
-    "static/css/main.b7c0cbd2.css",
-    "static/js/main.c5c0acdb.js"
+    "static/css/main.46b34341.css",
+    "static/js/main.fc202846.js"
   ]
 }
