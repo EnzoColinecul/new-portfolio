@@ -1,13 +1,12 @@
 /* eslint-disable react/jsx-props-no-spreading */
 
 import Slider from 'react-slick/lib/slider';
+import ImageCrystal from '../../assets/images/crystal-logo-ai.png';
+import ImageMafia from '../../assets/images/mafia.png';
 import Image5 from '../../assets/images/portf-kimchallenge.png';
-import Image4 from '../../assets/images/portf-realstate.png';
 import Image1 from '../../assets/images/portf-rym.png';
 import Image3 from '../../assets/images/portf-voip.png';
 import ImageSplitea from '../../assets/images/splitea.png';
-import ImageCrystal from '../../assets/images/crystal-logo-ai.png';
-import ImageMafia from '../../assets/images/mafia.png';
 import './portfolio.css';
 import Project from './Project';
 
@@ -39,7 +38,7 @@ function Portfolio() {
       title: 'Crystal Carpet Clean',
       img: ImageCrystal,
       description: 'Conversion-focused website for a professional carpet and upholstery cleaning business in Auckland, NZ. Built to earn trust and turn visitors into bookings.',
-      demo: 'https://crystalcarpetclean.vercel.app/',
+      online: 'https://www.crystalcarpetclean.co.nz/',
     },
     {
       title: 'Splitea',
@@ -86,7 +85,7 @@ function Portfolio() {
       <h2>Portfolio</h2>
       <Slider className="portfolio__container" {...settings}>
         {repositories.map(({
-          title, img, repositoryLink, description, demo, caseStudy,
+          title, img, repositoryLink, description, demo, caseStudy, online,
         }) => (
           <Project
             key={title}
@@ -96,6 +95,7 @@ function Portfolio() {
             repositoryLink={repositoryLink}
             demo={demo}
             caseStudy={caseStudy}
+            online={online}
           />
         ))}
       </Slider>

@@ -1,12 +1,12 @@
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 import { AiTwotonePlayCircle } from 'react-icons/ai';
 import { BsGithub } from 'react-icons/bs';
 import { CgSmileNone } from 'react-icons/cg';
 import { MdOutlineOpenInNew } from 'react-icons/md';
+import { Link } from 'react-router-dom';
 
 function Project({
-  img, title, description, repositoryLink, demo, caseStudy,
+  img, title, description, repositoryLink, demo, caseStudy, online,
 }) {
   return (
     <div className="portfolio__item">
@@ -37,6 +37,12 @@ function Project({
               Case Study
             </Link>
           )}
+          {online === null ? '' : (
+            <a href={online} target="_blank" className="btn btn-primary" rel="noreferrer">
+              <AiTwotonePlayCircle />
+              View Online
+            </a>
+          )}
         </div>
       </div>
     </div>
@@ -50,6 +56,7 @@ Project.propTypes = {
   repositoryLink: PropTypes.string,
   demo: PropTypes.string,
   caseStudy: PropTypes.string,
+  online: PropTypes.string,
 };
 
 Project.defaultProps = {
@@ -59,6 +66,7 @@ Project.defaultProps = {
   repositoryLink: null,
   demo: null,
   caseStudy: null,
+  online: null,
 };
 
 export default Project;
