@@ -12,7 +12,6 @@ function Closing() {
     >
       <Brand section="Thank you" />
       <div className="splitea-closing__inner stagger">
-        <p className="splitea-closing__eyebrow">The end · &amp; the beginning</p>
         <h2 className="splitea-closing__headline">
           Settle up.
           <br />

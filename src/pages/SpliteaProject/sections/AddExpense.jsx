@@ -1,3 +1,8 @@
+import { BsStars } from 'react-icons/bs';
+import {
+  FaFileAlt,
+  FaPen,
+} from 'react-icons/fa';
 import Brand from '../components/Brand';
 import useInView from '../hooks/useInView';
 
@@ -5,7 +10,7 @@ const modes = [
   {
     step: 'Mode 01',
     title: 'Split with AI',
-    icon: '✶',
+    icon: <BsStars />,
     body: 'Snap the receipt, describe the split out loud, approve.',
     bullets: ['"Split everything 4 ways"', '"Burgers equal, drinks only Juan"', '"Tax & tip pro-rata"'],
     featured: true,
@@ -13,14 +18,14 @@ const modes = [
   {
     step: 'Mode 02',
     title: 'Extract Total',
-    icon: '◳',
+    icon: <FaFileAlt />,
     body: 'Auto-extract just the total from a photo. Type the rest.',
     bullets: ['OCR pulls subtotal, tax, total', 'You pick how to divide', 'Best for fixed-percent splits'],
   },
   {
     step: 'Mode 03',
     title: 'Manual Entry',
-    icon: '✎',
+    icon: <FaPen />,
     body: 'No camera, no voice. Just type the amount and split.',
     bullets: ['Equal, percent, or custom', 'Save as recurring', 'Works offline'],
   },
@@ -59,24 +64,6 @@ function AddExpense() {
               </ul>
             </article>
           ))}
-        </div>
-        <div className="splitea-tools">
-          <span className="splitea-tool-pill">
-            <strong>OCR</strong>
-            AWS Textract
-          </span>
-          <span className="splitea-tool-pill">
-            <strong>Voice</strong>
-            AWS Transcribe
-          </span>
-          <span className="splitea-tool-pill">
-            <strong>Reasoning</strong>
-            AWS Bedrock
-          </span>
-          <span className="splitea-tool-pill">
-            <strong>Async</strong>
-            SQS jobs
-          </span>
         </div>
       </div>
     </section>

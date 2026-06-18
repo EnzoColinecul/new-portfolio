@@ -18,11 +18,6 @@ function Cover() {
           From the awkward &ldquo;who owes what&rdquo; to actual settlement —
           in a few taps, with a little help from AI.
         </p>
-        <div className="splitea-cover__pills">
-          <span className="splitea-pill">React Native · Expo</span>
-          <span className="splitea-pill">FastAPI · MySQL · AWS</span>
-          <span className="splitea-pill">AI receipt workflows</span>
-        </div>
       </div>
       <div className="splitea-scroll-prompt" aria-hidden="true">
         <span>scroll to explore</span>

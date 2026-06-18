@@ -1,11 +1,17 @@
+import {
+  FaCalculator,
+  FaChartBar,
+  FaClock,
+  FaComments,
+} from 'react-icons/fa';
 import Brand from '../components/Brand';
 import useInView from '../hooks/useInView';
 
 const painPoints = [
-  { icon: '🧮', title: 'Mental math', body: 'Tax, tip, who had the appetizer — calculated in heads or napkins.' },
-  { icon: '💬', title: 'WhatsApp threads', body: 'Receipts and Venmo screenshots scattered across chat history.' },
-  { icon: '📊', title: 'Spreadsheets', body: 'A "Trips" tab that nobody updates after day two.' },
-  { icon: '⏰', title: 'Venmo nudges', body: 'Days of awkward reminders before everyone is settled.' },
+  { icon: <FaCalculator />, title: 'Mental math', body: 'Tax, tip, who had the appetizer — calculated in heads or napkins.' },
+  { icon: <FaComments />, title: 'WhatsApp threads', body: 'Receipts and Venmo screenshots scattered across chat history.' },
+  { icon: <FaChartBar />, title: 'Spreadsheets', body: 'A "Trips" tab that nobody updates after day two.' },
+  { icon: <FaClock />, title: 'Venmo nudges', body: 'Days of awkward reminders before everyone is settled.' },
 ];
 
 const stats = [
@@ -24,7 +30,6 @@ function Problem() {
     >
       <Brand section="The problem" />
       <div className="splitea-section__inner">
-        <p className="splitea-eyebrow">The problem</p>
         <h2 className="splitea-headline">
           Three friends, one receipt,
           <br />

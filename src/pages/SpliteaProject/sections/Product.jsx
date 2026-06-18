@@ -58,7 +58,7 @@ function Product() {
                   <span className="splitea-phone__balance-icon" />
                   Net balance
                 </span>
-                <span className="splitea-phone__balance-value">$83,633.07</span>
+                <span className="splitea-phone__balance-value">$83,50</span>
                 <span className="splitea-phone__balance-sub">You are owed</span>
               </div>
               <div className="splitea-phone__activity-head">
