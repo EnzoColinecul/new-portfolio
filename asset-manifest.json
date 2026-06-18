@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/new-portfolio/static/css/main.46b34341.css",
-    "main.js": "/new-portfolio/static/js/main.8f828557.js",
+    "main.css": "/new-portfolio/static/css/main.1cd28776.css",
+    "main.js": "/new-portfolio/static/js/main.c7dc9e07.js",
     "static/media/splitea-icon.png": "/new-portfolio/static/media/splitea-icon.56ba610bfaf4d72da5d1.png",
     "static/media/portf-rym.png": "/new-portfolio/static/media/portf-rym.21d01267299a252d2e57.png",
     "static/media/crystal-logo-ai.png": "/new-portfolio/static/media/crystal-logo-ai.7c18e21bf57dfc007b2f.png",
@@ -17,11 +17,11 @@
     "static/media/slick.ttf": "/new-portfolio/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/new-portfolio/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/new-portfolio/index.html",
-    "main.46b34341.css.map": "/new-portfolio/static/css/main.46b34341.css.map",
-    "main.8f828557.js.map": "/new-portfolio/static/js/main.8f828557.js.map"
+    "main.1cd28776.css.map": "/new-portfolio/static/css/main.1cd28776.css.map",
+    "main.c7dc9e07.js.map": "/new-portfolio/static/js/main.c7dc9e07.js.map"
   },
   "entrypoints": [
-    "static/css/main.46b34341.css",
-    "static/js/main.8f828557.js"
+    "static/css/main.1cd28776.css",
+    "static/js/main.c7dc9e07.js"
   ]
 }

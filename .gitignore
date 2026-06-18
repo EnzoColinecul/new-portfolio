@@ -1,2 +1,7 @@
 build/
 node_modules/
+
+#MD Files
+ARCHITECTURE.md
+SPLITEA-NEW-PAGE.md
+SPLITEA_CANDIDATE_REVIEW.md
