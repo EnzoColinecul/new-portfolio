@@ -26,14 +26,14 @@ function Certifications() {
 
   return (
     <section id="certifications">
-      <h5>Credentials</h5>
+      <p className="section-eyebrow">Credentials</p>
       <h2>My Certifications</h2>
 
       <div className="container certifications__container">
         {certifications.map((cert) => (
           <div className="cert__card" key={cert.title}>
             <h3>{cert.title}</h3>
-            <h5 className="text-light">{cert.issuer}</h5>
+            <p className="text-light">{cert.issuer}</p>
             <div className="cert__card-cta">
               <a href={cert.link} target="_blank" rel="noreferrer" className="btn btn-primary">
                 View Credential

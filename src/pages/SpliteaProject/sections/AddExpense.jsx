@@ -12,7 +12,7 @@ const modes = [
     title: 'Split with AI',
     icon: <BsStars />,
     body: 'Snap the receipt, describe the split out loud, approve.',
-    bullets: ['"Split everything 4 ways"', '"Burgers equal, drinks only Juan"', '"Tax & tip pro-rata"'],
+    bullets: ['“Split everything 4 ways”', '“Burgers equal, drinks only Juan”', '“Tax & tip pro-rata”'],
     featured: true,
   },
   {

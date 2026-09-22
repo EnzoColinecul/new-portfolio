@@ -32,7 +32,7 @@ function Cover() {
           target="_blank"
           rel="noreferrer"
         >
-          View live site →
+          View Live Site →
         </a>
       </div>
       <div className="crystal-scroll-prompt" aria-hidden="true">

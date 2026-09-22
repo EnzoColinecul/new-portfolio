@@ -52,7 +52,7 @@ function Timeline() {
 
   return (
     <section id="timeline">
-      <h5>My Journey</h5>
+      <p className="section-eyebrow">My Journey</p>
       <h2>Education & Experience</h2>
 
       <div className="container timeline__container">

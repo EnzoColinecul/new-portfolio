@@ -41,10 +41,18 @@
   gap: 1.2rem;
 }
 
+.contact__form label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-weight: 700;
+  color: var(--color-light);
+}
+
 .contact__form button {
   align-self: center;
   width: 50%;
-  transition: var(--transition);
+  transition: color 200ms ease, background-color 200ms ease, border-color 200ms ease, opacity 200ms ease;
 }
 
 
@@ -56,11 +64,21 @@ input, textarea {
   border-radius: 0.8rem;
   color: var(--color-white) !important;
   resize: none;
-  transition: var(--transition);
+  transition: border-color 200ms ease, box-shadow 200ms ease;
 }
 
-input:focus, textarea:focus {
+input:focus-visible, textarea:focus-visible {
   border: 2px solid var(--color-primary-variant);
+  box-shadow: 0 0 0 3px rgba(255, 179, 179, 0.25);
+}
+
+.contact__status {
+  color: var(--color-light);
+  line-height: 1.4;
+}
+
+.contact__status--error {
+  color: #ffd1d1;
 }
 
 input:-webkit-autofill,

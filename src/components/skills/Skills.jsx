@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import { useEffect, useRef, useState } from 'react';
 import {
   RiCloudLine,
   RiCpuLine,
@@ -9,68 +8,6 @@ import {
   RiTerminalLine,
 } from 'react-icons/ri';
 import './skills.css';
-
-function Counter({ targetValue, suffix }) {
-  const [count, setCount] = useState(0);
-  const [isVisible, setIsVisible] = useState(false);
-  const elementRef = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.1 },
-    );
-
-    if (elementRef.current) {
-      observer.observe(elementRef.current);
-    }
-
-    return () => {
-      if (elementRef.current) {
-        observer.unobserve(elementRef.current);
-      }
-    };
-  }, []);
-
-  useEffect(() => {
-    let timer;
-    if (isVisible) {
-      let start = 0;
-      const duration = 500; // ms
-      const increment = targetValue / (duration / 16);
-
-      timer = setInterval(() => {
-        start += increment;
-        if (start >= targetValue) {
-          setCount(targetValue);
-          clearInterval(timer);
-        } else {
-          setCount(Math.floor(start));
-        }
-      }, 16);
-    }
-
-    return () => {
-      if (timer) clearInterval(timer);
-    };
-  }, [isVisible, targetValue]);
-
-  return (
-    <span ref={elementRef}>
-      {count}
-      {suffix}
-    </span>
-  );
-}
-
-Counter.propTypes = {
-  targetValue: PropTypes.number.isRequired,
-  suffix: PropTypes.string.isRequired,
-};
 
 function Skills() {
   const skillCategories = [
@@ -108,23 +45,18 @@ function Skills() {
 
   return (
     <section id="skills">
-      <h5>My technical arsenal for building modern applications</h5>
+      <p className="section-eyebrow">My Technical Arsenal for Building Modern Applications</p>
       <h2>Skills & Technologies</h2>
 
       <div className="container skills__container">
         {skillCategories.map((category) => (
           <div className="skill__card" key={category.title}>
             <div className="skill__header">
-              <span className="skill__icon">{category.icon}</span>
+              <span className="skill__icon" aria-hidden="true">{category.icon}</span>
               <h3>{category.title}</h3>
             </div>
 
-            {category.value && (
-              <p className="skills__years">
-                <Counter targetValue={category.value} suffix={category.suffix} />
-              </p>
-            )}
-            <ul className="skill__list">
+            <ul className="skill__list" translate="no">
               {category.items.map((item) => (
                 <li key={item}>{item}</li>
               ))}

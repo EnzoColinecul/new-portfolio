@@ -28,7 +28,7 @@ function Closing() {
           target="_blank"
           rel="noreferrer"
         >
-          Visit the live site →
+          Visit the Live Site →
         </a>
         <div className="crystal-closing__contact">
           <span className="crystal-closing__contact-label">Have a project in mind?</span>
@@ -36,7 +36,7 @@ function Closing() {
             enzocolinecul1997@gmail.com
           </a>
         </div>
-        <Link to="/" className="crystal-closing__back">← back to portfolio</Link>
+        <Link to="/" className="crystal-closing__back">← Back to Portfolio</Link>
       </div>
     </section>
   );

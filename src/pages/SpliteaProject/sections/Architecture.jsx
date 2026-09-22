@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import {
   SiAmazonaws,
   SiAmazons3,
@@ -27,6 +28,7 @@ const ICONS = {
 
 const runtime = [
   {
+    id: 'mobile-client',
     icon: 'expo',
     title: 'Mobile client',
     sub: 'Expo · React Native',
@@ -34,6 +36,7 @@ const runtime = [
     chips: ['axios', 'SecureStore JWT'],
   },
   {
+    id: 'alb',
     icon: 'aws',
     title: 'ALB',
     sub: 'Application Load Balancer',
@@ -41,6 +44,7 @@ const runtime = [
     chips: ['/api/health/'],
   },
   {
+    id: 'ecs-fargate',
     icon: 'fastapi',
     title: 'ECS Fargate',
     sub: 'FastAPI · Uvicorn',
@@ -51,6 +55,7 @@ const runtime = [
 
 const services = [
   {
+    id: 'rds-mysql',
     icon: 'mysql',
     title: 'RDS MySQL',
     sub: 'Secrets Manager',
@@ -58,6 +63,7 @@ const services = [
     chips: ['Users · Groups · Expenses'],
   },
   {
+    id: 's3',
     icon: 's3',
     title: 'S3',
     sub: 'Receipts',
@@ -65,6 +71,7 @@ const services = [
     chips: ['Signed uploads'],
   },
   {
+    id: 'sqs-eventbridge',
     icon: 'aws',
     title: 'SQS · EventBridge',
     sub: 'Async pipelines',
@@ -72,6 +79,7 @@ const services = [
     chips: ['Stripe Worker'],
   },
   {
+    id: 'stripe-connect',
     icon: 'stripe',
     title: 'Stripe Connect',
     sub: 'Settlement',
@@ -79,6 +87,7 @@ const services = [
     chips: ['Destination charges'],
   },
   {
+    id: 'aws-ai',
     icon: 'aws',
     title: 'AWS AI',
     sub: 'Receipt workflow',
@@ -89,6 +98,7 @@ const services = [
 
 const delivery = [
   {
+    id: 'git-push',
     icon: 'git',
     title: 'git push',
     sub: 'branch develop',
@@ -96,6 +106,7 @@ const delivery = [
     chips: ['Trigger'],
   },
   {
+    id: 'github-actions',
     icon: 'ghactions',
     title: 'GitHub Actions',
     sub: 'CI gates + build',
@@ -103,6 +114,7 @@ const delivery = [
     chips: ['Black', 'Gitleaks', 'docker build (SHA)'],
   },
   {
+    id: 'ecr',
     icon: 'aws',
     title: 'ECR',
     sub: 'Image registry',
@@ -110,6 +122,7 @@ const delivery = [
     chips: ['git SHA + latest'],
   },
   {
+    id: 'terraform-apply',
     icon: 'terraform',
     title: 'terraform apply',
     sub: 'Infrastructure as Code',
@@ -117,6 +130,7 @@ const delivery = [
     chips: ['Networking', 'Database', 'Application Load Balancer', 'Elastic Container Service', 'S3'],
   },
   {
+    id: 'aws-deploy',
     icon: 'aws',
     title: 'AWS',
     sub: 'Provision + deploy',
@@ -125,12 +139,14 @@ const delivery = [
   },
 ];
 
+const ALL_NODES = [...runtime, ...services, ...delivery];
+
 const renderNode = (node, onOpen, compact) => {
   const { Cmp, color } = ICONS[node.icon];
   return (
     <button
       type="button"
-      onClick={() => onOpen(node)}
+      onClick={(event) => onOpen(node, event)}
       className={`splitea-arch__node ${compact ? 'splitea-arch__node--compact' : ''}`}
     >
       <span className="splitea-arch__head">
@@ -158,18 +174,56 @@ const renderFlow = (nodes, onOpen) => (
 
 function Architecture() {
   const [ref, isInView] = useInView(0.25);
-  const [active, setActive] = useState(null);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [activeId, setActiveId] = useState(() => searchParams.get('arch'));
+  const active = ALL_NODES.find((node) => node.id === activeId) || null;
   const closeRef = useRef(null);
+  const dialogRef = useRef(null);
+  const lastTriggerRef = useRef(null);
 
-  const onClose = () => setActive(null);
+  const onClose = () => {
+    setActiveId(null);
+    const nextParams = new URLSearchParams(searchParams);
+    nextParams.delete('arch');
+    setSearchParams(nextParams, { replace: true });
+  };
+
+  const onOpen = (node, event) => {
+    lastTriggerRef.current = event.currentTarget;
+    setActiveId(node.id);
+    const nextParams = new URLSearchParams(searchParams);
+    nextParams.set('arch', node.id);
+    setSearchParams(nextParams);
+  };
 
   useEffect(() => {
-    if (!active) return undefined;
-    const onKey = (e) => { if (e.key === 'Escape') setActive(null); };
-    document.addEventListener('keydown', onKey);
-    closeRef.current?.focus();
-    return () => document.removeEventListener('keydown', onKey);
+    const queryId = searchParams.get('arch');
+    const queryNode = ALL_NODES.find((node) => node.id === queryId);
+    setActiveId(queryNode?.id || null);
+    if (queryId && !queryNode) {
+      const nextParams = new URLSearchParams(searchParams);
+      nextParams.delete('arch');
+      setSearchParams(nextParams, { replace: true });
+    }
+  }, [searchParams, setSearchParams]);
+
+  useEffect(() => {
+    const dialog = dialogRef.current;
+    if (!dialog) return undefined;
+
+    if (active) {
+      if (!dialog.open) dialog.showModal();
+      closeRef.current?.focus();
+    } else if (dialog.open) {
+      dialog.close();
+      lastTriggerRef.current?.focus();
+    }
+    return undefined;
   }, [active]);
+
+  useEffect(() => () => {
+    if (dialogRef.current?.open) dialogRef.current.close();
+  }, []);
 
   const ActiveIcon = active ? ICONS[active.icon].Cmp : null;
 
@@ -184,7 +238,7 @@ function Architecture() {
           <div className="splitea-arch__lane">
             <span className="splitea-arch__lane-label">Runtime</span>
             <span className="splitea-arch__sublabel">Request path</span>
-            {renderFlow(runtime, setActive)}
+            {renderFlow(runtime, onOpen)}
             <div className="splitea-arch__branch" aria-hidden="true">
               <span className="splitea-arch__branch-arrow">↓</span>
               <span className="splitea-arch__branch-label">ECS Fargate connects to</span>
@@ -192,7 +246,7 @@ function Architecture() {
             <span className="splitea-arch__sublabel">Backend services &amp; integrations</span>
             <div className="splitea-arch__services">
               {services.map((node) => (
-                <div key={node.title}>{renderNode(node, setActive, true)}</div>
+                <div key={node.title}>{renderNode(node, onOpen, true)}</div>
               ))}
             </div>
           </div>
@@ -206,54 +260,60 @@ function Architecture() {
 
           <div className="splitea-arch__lane">
             <span className="splitea-arch__lane-label">Delivery — CI/CD &amp; IaC</span>
-            {renderFlow(delivery, setActive)}
+            {renderFlow(delivery, onOpen)}
           </div>
         </div>
       </div>
 
-      {active && (
-        <div className="splitea-arch__modal-overlay">
-          <button
-            type="button"
-            className="splitea-arch__modal-backdrop"
-            aria-label="Close"
-            onClick={onClose}
-          />
-          <div
-            className="splitea-arch__modal"
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="splitea-arch-modal-title"
-          >
+      <dialog
+        ref={dialogRef}
+        className="splitea-arch__modal-overlay"
+        aria-labelledby="splitea-arch-modal-title"
+        aria-describedby="splitea-arch-modal-desc"
+        onCancel={(event) => {
+          event.preventDefault();
+          onClose();
+        }}
+      >
+        {active && (
+          <>
             <button
               type="button"
-              ref={closeRef}
-              className="splitea-arch__modal-close"
+              className="splitea-arch__modal-backdrop"
+              aria-label="Close architecture backdrop"
               onClick={onClose}
-              aria-label="Close"
-            >
-              ×
-            </button>
-            <div className="splitea-arch__modal-head">
-              <ActiveIcon
-                className="splitea-arch__logo"
-                style={{ color: ICONS[active.icon].color }}
-                aria-hidden="true"
-              />
-              <span className="splitea-arch__heading">
-                <span className="splitea-arch__title">{active.title}</span>
-                <span className="splitea-arch__sub" id="splitea-arch-modal-title">{active.sub}</span>
-              </span>
+            />
+            <div className="splitea-arch__modal">
+              <button
+                type="button"
+                ref={closeRef}
+                className="splitea-arch__modal-close"
+                onClick={onClose}
+                aria-label="Close architecture details"
+              >
+                ×
+              </button>
+              <div className="splitea-arch__modal-head">
+                <ActiveIcon
+                  className="splitea-arch__logo"
+                  style={{ color: ICONS[active.icon].color }}
+                  aria-hidden="true"
+                />
+                <span className="splitea-arch__heading">
+                  <span className="splitea-arch__title" id="splitea-arch-modal-title">{active.title}</span>
+                  <span className="splitea-arch__sub">{active.sub}</span>
+                </span>
+              </div>
+              <p className="splitea-arch__modal-desc" id="splitea-arch-modal-desc">{active.desc}</p>
+              <div className="splitea-arch__modal-chips">
+                {active.chips.map((chip) => (
+                  <span key={chip} className="splitea-arch__chip">{chip}</span>
+                ))}
+              </div>
             </div>
-            <p className="splitea-arch__modal-desc">{active.desc}</p>
-            <div className="splitea-arch__modal-chips">
-              {active.chips.map((chip) => (
-                <span key={chip} className="splitea-arch__chip">{chip}</span>
-              ))}
-            </div>
-          </div>
-        </div>
-      )}
+          </>
+        )}
+      </dialog>
     </section>
   );
 }

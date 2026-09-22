@@ -26,7 +26,7 @@ function Closing() {
             enzocolinecul1997@gmail.com
           </a>
         </div>
-        <Link to="/" className="splitea-closing__back">← back to portfolio</Link>
+        <Link to="/" className="splitea-closing__back">← Back to Portfolio</Link>
       </div>
     </section>
   );

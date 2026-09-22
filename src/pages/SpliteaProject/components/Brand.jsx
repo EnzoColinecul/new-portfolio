@@ -4,7 +4,7 @@ import logo from '../../../assets/images/splitea-icon.png';
 function Brand({ section }) {
   return (
     <div className="splitea-brand" aria-hidden="true">
-      <img src={logo} alt="" className="splitea-brand__logo" />
+      <img src={logo} alt="" className="splitea-brand__logo" width="1024" height="1024" loading="lazy" />
       {section && (
         <>
           <span className="splitea-brand__sep">·</span>

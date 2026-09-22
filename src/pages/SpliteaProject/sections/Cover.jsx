@@ -11,7 +11,7 @@ function Cover() {
     >
       <div className="splitea-cover__inner stagger">
         <h1 className="splitea-cover__title">
-          <img src={logo} alt="Splitea logo" />
+          <img src={logo} alt="Splitea" width="1024" height="1024" loading="eager" fetchpriority="high" />
         </h1>
         <p className="splitea-cover__tagline">Shared expenses, sorted.</p>
         <p className="splitea-cover__subtitle">

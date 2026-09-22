@@ -9,7 +9,7 @@ nav {
   display: flex;
   gap: 0.8rem;
   border-radius: 3rem;
-  bottom: 2rem;
+  bottom: calc(2rem + env(safe-area-inset-bottom));
   backdrop-filter: blur(15px);
   z-index: 10;
 }
@@ -19,6 +19,7 @@ nav a {
   padding: 0.9rem ;
   display: flex;
   font-size: 1.2rem;
+  transition: color 180ms ease, background-color 180ms ease;
 }
 
 nav a.active {

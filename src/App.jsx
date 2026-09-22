@@ -11,6 +11,7 @@ import 'slick-carousel/slick/slick-theme.css';
 function App() {
   return (
     <BrowserRouter basename="/new-portfolio">
+      <a className="skip-link" href="#main-content">Skip to main content</a>
       <Toaster position="top-center" />
       <Routes>
         <Route path="/" element={<Portfolio />} />

@@ -5,12 +5,18 @@ import './about.css';
 function About() {
   return (
     <section id="about">
-      <h5>Get To Know</h5>
+      <p className="section-eyebrow">Get To Know</p>
       <h2>About Me</h2>
       <div className="container about__container">
         <div className="about__me">
           <div className="about__me-image">
-            <img src={ME} alt="AboutImage" />
+            <img
+              src={ME}
+              alt="Enzo Ariel Colinecul"
+              width="742"
+              height="1646"
+              loading="lazy"
+            />
           </div>
         </div>
         <div className="about__content">

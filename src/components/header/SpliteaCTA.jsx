@@ -23,7 +23,7 @@ function SpliteaCTA() {
               fill="currentColor"
             />
           </svg>
-          <span>Check my last project!</span>
+          <span>Check My Latest Project!</span>
           <span className="splitea-cta__arrow" aria-hidden="true">→</span>
         </span>
       </a>

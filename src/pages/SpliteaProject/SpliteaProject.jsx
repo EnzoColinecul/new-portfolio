@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import Cover from './sections/Cover';
 import Problem from './sections/Problem';
 import Product from './sections/Product';
@@ -8,14 +7,13 @@ import AIWorkflow from './sections/AIWorkflow';
 import Roadmap from './sections/Roadmap';
 import Closing from './sections/Closing';
 import './splitea.css';
+import usePageMetadata from '../../hooks/usePageMetadata';
 
 function SpliteaProject() {
-  useEffect(() => {
-    document.title = 'Splitea — Shared expenses, sorted';
-  }, []);
+  usePageMetadata('Splitea — Shared expenses, sorted', '#FAF9F5', 'light');
 
   return (
-    <main className="splitea">
+    <main id="main-content" className="splitea" tabIndex="-1">
       <Cover />
       <Problem />
       <Product />

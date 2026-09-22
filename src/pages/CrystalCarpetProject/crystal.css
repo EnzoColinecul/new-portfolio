@@ -7,8 +7,6 @@
      soft blue     #E8F2FF
    Type: Inter for body/headings, JetBrains Mono for labels
    ============================================================ */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
-
 .crystal {
   --c-bg: #F6F9FC;
   --c-bg-card: #FFFFFF;
@@ -26,6 +24,7 @@
   --c-sans: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
   --c-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
 
+  color-scheme: light;
   position: fixed;
   inset: 0;
   background: var(--c-bg);
@@ -47,7 +46,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 5rem 6vw;
+  padding: calc(5rem + env(safe-area-inset-top)) calc(6vw + env(safe-area-inset-right)) calc(5rem + env(safe-area-inset-bottom)) calc(6vw + env(safe-area-inset-left));
   opacity: 0;
   transform: translateY(40px);
   transition: opacity 700ms ease, transform 700ms ease;
@@ -119,6 +118,7 @@
   margin-bottom: 1.4rem;
   letter-spacing: -0.025em;
   color: var(--c-navy);
+  text-wrap: balance;
 }
 
 .crystal-lede {
@@ -345,6 +345,7 @@
   font-size: 2rem;
   font-weight: 800;
   color: var(--c-navy);
+  font-variant-numeric: tabular-nums;
   letter-spacing: -0.02em;
 }
 
@@ -428,6 +429,7 @@
   font-size: 2rem;
   font-weight: 800;
   color: var(--c-blue);
+  font-variant-numeric: tabular-nums;
   letter-spacing: -0.02em;
 }
 
@@ -599,7 +601,7 @@
 /* Mobile — 768px */
 @media (max-width: 768px) {
   .crystal-section {
-    padding: 5rem 5vw 3rem;
+    padding: calc(5rem + env(safe-area-inset-top)) calc(5vw + env(safe-area-inset-right)) calc(3rem + env(safe-area-inset-bottom)) calc(5vw + env(safe-area-inset-left));
     min-height: 100svh;
     min-height: 100dvh;
     align-items: flex-start;
@@ -616,7 +618,7 @@
 
 /* Small mobile — 480px */
 @media (max-width: 480px) {
-  .crystal-section { padding: 4.5rem 4vw 2.5rem; }
+  .crystal-section { padding: calc(4.5rem + env(safe-area-inset-top)) calc(4vw + env(safe-area-inset-right)) calc(2.5rem + env(safe-area-inset-bottom)) calc(4vw + env(safe-area-inset-left)); }
   .crystal-brand   { left: 4vw; top: 1rem; }
 
   .crystal-grid--four  { grid-template-columns: 1fr; }

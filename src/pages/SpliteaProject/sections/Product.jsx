@@ -62,8 +62,8 @@ function Product() {
                 <span className="splitea-phone__balance-sub">You are owed</span>
               </div>
               <div className="splitea-phone__activity-head">
-                <h5>Recent activity</h5>
-                <a href="#all">See all</a>
+                <span className="splitea-phone__activity-title">Recent activity</span>
+                <span>See all</span>
               </div>
               <div className="splitea-phone__feed">
                 <div className="splitea-phone__row">

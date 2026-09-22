@@ -9,26 +9,29 @@ import './nav.css';
 
 function Nav() {
   const [active, setActive] = useState('#home');
+  const links = [
+    ['#home', 'Home', AiOutlineHome],
+    ['#about', 'About', AiOutlineUser],
+    ['#skills', 'Skills', BiBook],
+    ['#certifications', 'Certifications', GiAchievement],
+    ['#services', 'Services', RiServiceLine],
+    ['#contact', 'Contact', RiContactsBook2Line],
+  ];
+
   return (
     <nav>
-      <a href="#home" onClick={() => setActive('#home')} className={active === '#home' ? 'active' : ''}>
-        <AiOutlineHome />
-      </a>
-      <a href="#about" onClick={() => setActive('#about')} className={active === '#about' ? 'active' : ''}>
-        <AiOutlineUser />
-      </a>
-      <a href="#skills" onClick={() => setActive('#skills')} className={active === '#skills' ? 'active' : ''}>
-        <BiBook />
-      </a>
-      <a href="#certifications" onClick={() => setActive('#certifications')} className={active === '#certifications' ? 'active' : ''}>
-        <GiAchievement />
-      </a>
-      <a href="#services" onClick={() => setActive('#services')} className={active === '#services' ? 'active' : ''}>
-        <RiServiceLine />
-      </a>
-      <a href="#contact" onClick={() => setActive('#contact')} className={active === '#contact' ? 'active' : ''}>
-        <RiContactsBook2Line />
-      </a>
+      {links.map(([href, label, Icon]) => (
+        <a
+          key={href}
+          href={href}
+          onClick={() => setActive(href)}
+          className={active === href ? 'active' : ''}
+          aria-label={label}
+          aria-current={active === href ? 'location' : undefined}
+        >
+          <Icon aria-hidden="true" />
+        </a>
+      ))}
     </nav>
   );
 }
