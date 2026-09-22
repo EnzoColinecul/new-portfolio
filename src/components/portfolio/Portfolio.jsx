@@ -178,7 +178,7 @@ function Portfolio() {
           >
             Previous
           </button>
-          <nav className="portfolio__dots" aria-label="Project pages">
+          <div className="portfolio__dots" role="group" aria-label="Project pages">
             {Array.from({ length: maxStart + 1 }, (_, index) => (
               <button
                 type="button"
@@ -187,10 +187,10 @@ function Portfolio() {
                 aria-label={`Show projects ${index + 1} to ${Math.min(index + slidesToShow, repositories.length)}`}
                 aria-current={safeCurrentSlide === index ? 'page' : undefined}
               >
-                {index + 1}
+                <span className="portfolio__dot" aria-hidden="true" />
               </button>
             ))}
-          </nav>
+          </div>
           <button
             type="button"
             className="btn btn-primary"

@@ -1,4 +1,4 @@
-nav {
+.site-nav {
   background: rgba(0, 0, 0, 0.3);
   width: max-content;
   display: block;
@@ -14,7 +14,7 @@ nav {
   z-index: 10;
 }
 
-nav a {
+.site-nav a {
   background: transparent;
   padding: 0.9rem ;
   display: flex;
@@ -22,7 +22,7 @@ nav a {
   transition: color 180ms ease, background-color 180ms ease;
 }
 
-nav a.active {
+.site-nav a.active {
   background: var(--color-bg);
   color: var(--color-white);
   border-radius: 15rem;

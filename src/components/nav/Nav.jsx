@@ -19,7 +19,7 @@ function Nav() {
   ];
 
   return (
-    <nav>
+    <nav className="site-nav" aria-label="Primary navigation">
       {links.map(([href, label, Icon]) => (
         <a
           key={href}

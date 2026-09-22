@@ -41,6 +41,8 @@ describe('Portfolio carousel', () => {
 
     const carousel = screen.getByRole('region', { name: 'Project portfolio' });
     expect(carousel).toHaveAttribute('aria-roledescription', 'carousel');
+    expect(screen.getByRole('group', { name: 'Project pages' })).toBeInTheDocument();
+    expect(screen.queryByRole('navigation', { name: 'Project pages' })).not.toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'Previous projects' })).toBeDisabled();
     expect(screen.getByRole('button', { name: 'Next projects' })).not.toBeDisabled();
     expect(screen.getByText('Showing Projects 1–1 of 7')).toBeInTheDocument();
