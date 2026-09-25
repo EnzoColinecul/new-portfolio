@@ -1,50 +1,50 @@
-/* eslint-disable max-len */
-import ME from '../../assets/images/me-2-new.jpg';
+import { contact, languages } from '../../data/profile';
 import './about.css';
+
+const facts = [
+  ['Based in', contact.location],
+  ['Open to', 'Roles across Australia · relocation OK'],
+  ['Focus', 'Cloud IAM · security automation · LLM agents'],
+  ['Languages', languages.join(' · ')],
+];
 
 function About() {
   return (
-    <section id="about">
-      <p className="section-eyebrow">Get To Know</p>
-      <h2>About Me</h2>
-      <div className="container about__container">
-        <div className="about__me">
-          <div className="about__me-image">
-            <img
-              src={ME}
-              alt="Enzo Ariel Colinecul"
-              width="742"
-              height="1646"
-              loading="lazy"
-            />
+    <section id="about" className="section" aria-labelledby="about-title">
+      <div className="container about__grid">
+        <div>
+          <p className="section__eyebrow">About</p>
+          <h2 id="about-title" className="section__title">
+            Security engineer who ships automation, not tickets.
+          </h2>
+          <div className="about__body">
+            <p>
+              I spent the last few years inside Mercado Libre&apos;s security team, one of Latin
+              America&apos;s largest tech companies with 120k+ employees, owning how engineers get
+              access to AWS, GCP and Azure. My job was to make that access both safe and fast:
+              APIs and automations instead of manual approvals, temporary credentials instead of
+              permanent ones.
+            </p>
+            <p>
+              More recently I&apos;ve focused on applied AI. I built an agentic LLM workflow that
+              reviews cloud permission requests, spots the risky actions and asks the right
+              follow-up questions, and I&apos;m an AWS Certified AI Practitioner.
+            </p>
+            <p>
+              I learn quickly, like clear goals and enjoy working closely with a team. Now based in
+              Melbourne, I&apos;m looking for my next role in cybersecurity, IAM or AI automation.
+            </p>
           </div>
         </div>
-        <div className="about__content">
-          <p className="about__p">
-            Cybersecurity & Software Engineer with over 4 years of experience in high-scale production environments
-            {' '}
-            including Mercado Libre (+120k employees).
-            <br />
-            <br />
-            I am an AWS Certified AI Practitioner specializing in Agentic workflows, LLM API deployment, and RAG pipelines.
-            <br />
-            <br />
-            My core expertise lies in translating complex technical requirements into scalable, autonomous AI solutions. I focus heavily on Identity and Access Management (IAM), access automation, and backend development.
-            <br />
-            <br />
-            I really like challenges and meeting goals. I learn quickly, I love to work in a team
-            {' '}
-            and I adapt quickly to changes.
-            <br />
-            <br />
-            Core technical skills:
-            <br />
-            AI & LLMs (OpenAI APIs, Agentic Routing, Claude Code) / Backend (Python, FastAPI, Flask, Node.js) / Cloud Services
-            {' '}
-            (AWS, GCP, Azure, Lambda, DynamoDB, API Gateway) / Infrastructure & DevOps (Terraform, Docker, GitHub Actions).
-          </p>
-          {/* <a href="#contact" className="btn btn-primary">Contact Me</a> */}
-        </div>
+
+        <dl className="about__facts card">
+          {facts.map(([term, value]) => (
+            <div className="about__fact" key={term}>
+              <dt>{term}</dt>
+              <dd>{value}</dd>
+            </div>
+          ))}
+        </dl>
       </div>
     </section>
   );

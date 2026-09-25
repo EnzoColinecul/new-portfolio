@@ -5,8 +5,6 @@ import SpliteaProject from './pages/SpliteaProject/SpliteaProject';
 import CrystalCarpetProject from './pages/CrystalCarpetProject/CrystalCarpetProject';
 
 import './index.css';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
 
 function App() {
   return (

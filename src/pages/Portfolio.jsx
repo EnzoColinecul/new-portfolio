@@ -1,31 +1,31 @@
-import Header from '../components/header/Header';
 import Nav from '../components/nav/Nav';
+import Hero from '../components/hero/Hero';
 import About from '../components/about/About';
-import Timeline from '../components/timeline/Timeline';
+import Experience from '../components/experience/Experience';
+import Projects from '../components/projects/Projects';
 import Skills from '../components/skills/Skills';
-import Certifications from '../components/certifications/Certifications';
-import Services from '../components/services/Services';
-import PortfolioSection from '../components/portfolio/Portfolio';
+import Credentials from '../components/credentials/Credentials';
 import Contact from '../components/contact/Contact';
 import Footer from '../components/footer/Footer';
 import usePageMetadata from '../hooks/usePageMetadata';
 
 function Portfolio() {
-  usePageMetadata('Enzo Colinecul — Cybersecurity & AI Engineer', '#1b0e0e', 'dark');
+  usePageMetadata('Enzo Colinecul — Cybersecurity & AI Automation Engineer', '#0a0f1c', 'dark');
 
   return (
-    <main id="main-content" tabIndex="-1">
-      <Header />
+    <div className="home">
       <Nav />
-      <About />
-      <Timeline />
-      <Skills />
-      <Certifications />
-      <Services />
-      <PortfolioSection />
-      <Contact />
+      <main id="main-content" tabIndex="-1">
+        <Hero />
+        <About />
+        <Experience />
+        <Projects />
+        <Skills />
+        <Credentials />
+        <Contact />
+      </main>
       <Footer />
-    </main>
+    </div>
   );
 }
 

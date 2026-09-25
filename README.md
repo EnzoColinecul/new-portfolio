@@ -6,21 +6,21 @@ Personal portfolio website built with React, showcasing my experience as a Softw
 
 ## Sections
 
-- **Header** — Hero intro with socials and CTA
-- **About** — Background and summary
-- **Timeline** — Professional experience
-- **Skills** — Core technical skills (AI & LLMs, Backend, Databases, Infrastructure, Cloud, Methodologies)
-- **Certifications** — AWS, Anthropic, and other credentials
-- **Services** — What I offer
-- **Portfolio** — Project showcase
-- **Contact** — Contact form (via EmailJS)
-- **Footer** — Links and credits
+- **Nav** — Sticky top bar with section links and CV download
+- **Hero** — Name, role, value proposition, key results
+- **About** — Summary and quick facts
+- **Experience** — Roles with achievement bullets and tools
+- **Projects** — Featured projects (with case studies) and smaller projects
+- **Skills** — Grouped tools and technologies
+- **Credentials** — Certifications and education
+- **Contact** — Contact channels and form (via EmailJS)
+
+All content lives in `src/data/profile.js` — edit that file to update text.
 
 ## Tech Stack
 
 - **React** 17 (Create React App)
 - **react-icons** — Icon library
-- **react-slick** — Carousel/slider
 - **react-hot-toast** — Toast notifications
 - **@emailjs/browser** — Client-side email sending
 - **gh-pages** — GitHub Pages deployment
@@ -29,7 +29,7 @@ Personal portfolio website built with React, showcasing my experience as a Softw
 
 ```bash
 # Install dependencies
-npm install
+npm install --legacy-peer-deps
 
 # Run locally
 npm start

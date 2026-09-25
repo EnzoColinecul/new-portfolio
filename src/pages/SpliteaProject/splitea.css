@@ -159,6 +159,12 @@
   align-items: center;
 }
 
+.splitea-cover__title img {
+  height: 100%;
+  object-fit: contain;
+  transform: scale(2.2);
+}
+
 .splitea-cover__logo {
   width: 92px;
   height: 92px;
