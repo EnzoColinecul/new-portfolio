@@ -21,7 +21,7 @@
   --c-line: rgba(12, 26, 46, 0.08);
   --c-line-strong: rgba(12, 26, 46, 0.16);
 
-  --c-sans: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --c-sans: 'Inter Variable', 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
   --c-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
 
   color-scheme: light;

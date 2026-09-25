@@ -1,41 +1,15 @@
 import emailjs from '@emailjs/browser';
 import { useRef, useState } from 'react';
-import { AiOutlineWhatsApp } from 'react-icons/ai';
-import { BsGithub, BsLinkedin } from 'react-icons/bs';
-import { HiOutlineMail } from 'react-icons/hi';
 import toast from 'react-hot-toast';
 
 import { contact } from '../../data/profile';
+import SectionHead from '../section-head/SectionHead';
 import './contact.css';
 
 const channels = [
-  {
-    label: 'Email',
-    value: contact.email,
-    href: `mailto:${contact.email}`,
-    Icon: HiOutlineMail,
-  },
-  {
-    label: 'Phone / WhatsApp',
-    value: contact.phoneDisplay,
-    href: contact.whatsapp,
-    external: true,
-    Icon: AiOutlineWhatsApp,
-  },
-  {
-    label: 'LinkedIn',
-    value: 'in/enzo-colinecul',
-    href: contact.linkedin,
-    external: true,
-    Icon: BsLinkedin,
-  },
-  {
-    label: 'GitHub',
-    value: 'EnzoColinecul',
-    href: contact.github,
-    external: true,
-    Icon: BsGithub,
-  },
+  { label: 'Phone / WhatsApp', value: contact.phoneDisplay, href: contact.whatsapp },
+  { label: 'LinkedIn', value: 'in/enzo-colinecul', href: contact.linkedin },
+  { label: 'GitHub', value: 'EnzoColinecul', href: contact.github },
 ];
 
 function Contact() {
@@ -70,49 +44,49 @@ function Contact() {
   return (
     <section id="contact" className="section" aria-labelledby="contact-title">
       <div className="container">
-        <div className="contact card">
-          <div className="contact__intro">
-            <p className="section__eyebrow">Contact</p>
-            <h2 id="contact-title" className="section__title">Let&apos;s talk about your team</h2>
-            <p className="section__lede">
-              I&apos;m open to cybersecurity, IAM and AI automation roles in Melbourne or anywhere
-              in Australia.
-            </p>
+        <SectionHead index="06" id="contact-title" title="Contact" note="Usually based in Melbourne, AU" />
 
-            <ul className="contact__channels">
-              {channels.map(({
-                label, value, href, external, Icon,
-              }) => (
-                <li key={label}>
-                  <a
-                    href={href}
-                    className="contact__channel"
-                    target={external ? '_blank' : undefined}
-                    rel="noreferrer"
-                  >
-                    <span className="contact__channel-icon"><Icon aria-hidden="true" /></span>
-                    <span>
-                      <span className="contact__channel-label">{label}</span>
-                      <span className="contact__channel-value">{value}</span>
-                    </span>
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+        <p className="contact__statement serif">
+          Hiring for security, IAM or AI automation?
+          {' '}
+          <em>Let&apos;s talk.</em>
+        </p>
+
+        <a href={`mailto:${contact.email}`} className="contact__email serif">
+          <span>{contact.email}</span>
+          <span className="contact__email-arrow" aria-hidden="true">↗</span>
+        </a>
+
+        <div className="contact__grid">
+          <ul className="contact__channels">
+            {channels.map(({ label, value, href }) => (
+              <li key={label}>
+                <span className="contact__channel-label mono">{label}</span>
+                <a href={href} target="_blank" rel="noreferrer" className="contact__channel-value">
+                  {value}
+                  <span aria-hidden="true">↗</span>
+                </a>
+              </li>
+            ))}
+            <li>
+              <span className="contact__channel-label mono">Location</span>
+              <span className="contact__channel-value">{contact.location}</span>
+            </li>
+          </ul>
 
           <form ref={form} onSubmit={sendEmail} className="contact__form">
+            <p className="contact__form-title mono">Or leave a message</p>
             <label htmlFor="contact-name">
-              Full Name
+              <span className="mono">Full Name</span>
               <input id="contact-name" type="text" name="name" placeholder="Jane Smith" autoComplete="name" required />
             </label>
             <label htmlFor="contact-email">
-              Email Address
+              <span className="mono">Email Address</span>
               <input id="contact-email" type="email" name="email" placeholder="jane@company.com" autoComplete="email" spellCheck={false} required />
             </label>
             <label htmlFor="contact-message">
-              Message
-              <textarea id="contact-message" name="message" placeholder="Tell me about the role or project…" autoComplete="off" rows="6" required />
+              <span className="mono">Message</span>
+              <textarea id="contact-message" name="message" placeholder="Tell me about the role…" autoComplete="off" rows="4" required />
             </label>
             <button
               type="submit"

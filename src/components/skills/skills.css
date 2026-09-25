@@ -1,74 +1,37 @@
-.skills__grid {
+.toolkit {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  border: 1px solid var(--color-line);
-  border-radius: var(--radius);
-  overflow: hidden;
+  gap: 3rem clamp(1.5rem, 4vw, 3.5rem);
 }
 
-.skills__group {
-  padding: 1.5rem 1.6rem 1.7rem;
-  background: var(--color-surface);
-  border-right: 1px solid var(--color-line);
+.toolkit__title {
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid var(--color-line-strong);
+  color: var(--color-accent);
+  font-weight: 400;
+}
+
+.toolkit__list li {
+  padding: 0.7rem 0;
   border-bottom: 1px solid var(--color-line);
+  font-size: 1.02rem;
+  transition: color 160ms ease, padding 300ms var(--ease-out);
 }
 
-.skills__group:nth-child(3n) {
-  border-right: 0;
-}
-
-.skills__group:nth-last-child(-n + 3) {
-  border-bottom: 0;
-}
-
-.skills__group h3 {
-  font-size: 1rem;
-  font-weight: 600;
-  margin-bottom: 0.9rem;
-}
-
-.skills__group .skills__tag {
-  font-family: var(--font-sans);
-  font-size: 0.84rem;
-  color: var(--color-text);
-  white-space: normal;
+.toolkit__list li:hover {
+  color: var(--color-accent);
+  padding-left: 0.5rem;
 }
 
 @media screen and (max-width: 900px) {
-  .skills__grid {
+  .toolkit {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .skills__group,
-  .skills__group:nth-child(3n),
-  .skills__group:nth-last-child(-n + 3) {
-    border-right: 1px solid var(--color-line);
-    border-bottom: 1px solid var(--color-line);
-  }
-
-  .skills__group:nth-child(2n) {
-    border-right: 0;
-  }
-
-  .skills__group:nth-last-child(-n + 2) {
-    border-bottom: 0;
   }
 }
 
-@media screen and (max-width: 600px) {
-  .skills__grid {
+@media screen and (max-width: 560px) {
+  .toolkit {
     grid-template-columns: 1fr;
-  }
-
-  .skills__group,
-  .skills__group:nth-child(3n),
-  .skills__group:nth-child(2n),
-  .skills__group:nth-last-child(-n + 3) {
-    border-right: 0;
-    border-bottom: 1px solid var(--color-line);
-  }
-
-  .skills__group:last-child {
-    border-bottom: 0;
+    gap: 2.25rem;
   }
 }

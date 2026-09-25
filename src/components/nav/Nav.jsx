@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { HiMenuAlt3, HiOutlineDownload, HiX } from 'react-icons/hi';
 
 import CV from '../../assets/pdf/Enzo_Ariel_Colinecul_CV.pdf';
 import './nav.css';
@@ -12,6 +11,8 @@ const links = [
   ['credentials', 'Credentials'],
   ['contact', 'Contact'],
 ];
+
+const sectionIds = ['home', ...links.map(([id]) => id)];
 
 function useActiveSection(ids) {
   const [active, setActive] = useState('');
@@ -36,8 +37,6 @@ function useActiveSection(ids) {
   return active;
 }
 
-const sectionIds = ['home', ...links.map(([id]) => id)];
-
 function Nav() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -58,16 +57,16 @@ function Nav() {
   }, [open]);
 
   return (
-    <header className={`site-nav${scrolled ? ' site-nav--scrolled' : ''}`}>
+    <header className={`site-nav${scrolled ? ' site-nav--scrolled' : ''}${open ? ' site-nav--open' : ''}`}>
       <div className="container site-nav__inner">
         <a href="#home" className="site-nav__brand" onClick={() => setOpen(false)}>
-          <span className="site-nav__mark" aria-hidden="true">EC</span>
-          <span>Enzo Colinecul</span>
+          <span className="site-nav__initials serif" aria-hidden="true">E.C.</span>
+          <span className="site-nav__name mono">Enzo Colinecul</span>
         </a>
 
-        <nav aria-label="Primary navigation" className={`site-nav__menu${open ? ' is-open' : ''}`} id="primary-menu">
-          <ul>
-            {links.map(([id, label]) => (
+        <nav aria-label="Primary navigation" className="site-nav__menu" id="primary-menu">
+          <ol>
+            {links.map(([id, label], index) => (
               <li key={id}>
                 <a
                   href={`#${id}`}
@@ -75,27 +74,27 @@ function Nav() {
                   aria-current={active === id ? 'location' : undefined}
                   onClick={() => setOpen(false)}
                 >
+                  <span className="site-nav__num" aria-hidden="true">{`0${index + 1}`}</span>
                   {label}
                 </a>
               </li>
             ))}
-          </ul>
+          </ol>
         </nav>
 
         <div className="site-nav__actions">
-          <a href={CV} download="Enzo_Colinecul_CV.pdf" className="btn btn-primary btn-sm">
-            <HiOutlineDownload aria-hidden="true" />
-            <span>CV</span>
+          <a href={CV} download="Enzo_Colinecul_CV.pdf" className="site-nav__cv mono">
+            Résumé
+            <span aria-hidden="true">↓</span>
           </a>
           <button
             type="button"
-            className="site-nav__toggle"
+            className="site-nav__toggle mono"
             aria-expanded={open}
             aria-controls="primary-menu"
-            aria-label={open ? 'Close menu' : 'Open menu'}
             onClick={() => setOpen((value) => !value)}
           >
-            {open ? <HiX aria-hidden="true" /> : <HiMenuAlt3 aria-hidden="true" />}
+            {open ? 'Close' : 'Menu'}
           </button>
         </div>
       </div>

@@ -1,26 +1,23 @@
 import PropTypes from 'prop-types';
-import { BsGithub } from 'react-icons/bs';
-import { HiArrowRight, HiOutlineExternalLink } from 'react-icons/hi';
 import { Link } from 'react-router-dom';
 
 import { featuredProjects, otherProjects } from '../../data/profile';
+import SectionHead from '../section-head/SectionHead';
 import './projects.css';
 
 function ProjectLink({ link }) {
   if (link.internal) {
     return (
-      <Link to={link.to} className="text-link">
+      <Link to={link.to} className="u-link">
         {link.label}
-        <HiArrowRight aria-hidden="true" />
+        <span aria-hidden="true">→</span>
       </Link>
     );
   }
-  const isCode = link.href.includes('github.com');
   return (
-    <a href={link.href} target="_blank" rel="noreferrer" className="text-link">
-      {isCode ? <BsGithub aria-hidden="true" /> : null}
+    <a href={link.href} target="_blank" rel="noreferrer" className="u-link">
       {link.label}
-      {!isCode ? <HiOutlineExternalLink aria-hidden="true" /> : null}
+      <span aria-hidden="true">↗</span>
     </a>
   );
 }
@@ -38,18 +35,24 @@ function Projects() {
   return (
     <section id="projects" className="section" aria-labelledby="projects-title">
       <div className="container">
-        <div className="section__head">
-          <p className="section__eyebrow">Projects</p>
-          <h2 id="projects-title" className="section__title">Things I&apos;ve built</h2>
-          <p className="section__lede">
-            Products, client work and side projects built outside my day job.
-          </p>
-        </div>
+        <SectionHead
+          index="03"
+          id="projects-title"
+          title={(
+            <>
+              Selected
+              {' '}
+              <em>work</em>
+            </>
+          )}
+          note="Built outside the day job"
+        />
 
-        <ul className="projects__featured">
-          {featuredProjects.map((project) => (
-            <li key={project.title} className="project card">
-              <div className="project__media">
+        <ol className="works">
+          {featuredProjects.map((project, index) => (
+            <li key={project.title} className="work">
+              <span className="work__num serif" aria-hidden="true">{`0${index + 1}`}</span>
+              <div className="work__media">
                 <img
                   src={project.img}
                   alt={`${project.title} preview`}
@@ -58,36 +61,37 @@ function Projects() {
                   loading="lazy"
                 />
               </div>
-              <div className="project__content">
-                <p className="project__kind">{project.kind}</p>
-                <h3 className="project__title">{project.title}</h3>
-                <p className="project__desc">{project.description}</p>
-                <ul className="tags" aria-label="Tech stack">
-                  {project.tags.map((tag) => <li className="tag" key={tag}>{tag}</li>)}
-                </ul>
-                <div className="project__links">
+              <div className="work__content">
+                <p className="work__kind mono">{project.kind}</p>
+                <h3 className="work__title serif">{project.title}</h3>
+                <p className="work__desc">{project.description}</p>
+                <p className="work__stack mono">
+                  <span className="sr-only">Stack: </span>
+                  {project.tags.join(' / ')}
+                </p>
+                <div className="work__links">
                   {project.links.map((link) => <ProjectLink key={link.label} link={link} />)}
                 </div>
               </div>
             </li>
           ))}
-        </ul>
+        </ol>
 
-        <h3 className="projects__subhead">More projects</h3>
-        <ul className="projects__more">
-          {otherProjects.map((project) => (
-            <li key={project.title} className="project-mini card">
-              <h4>{project.title}</h4>
-              <p>{project.description}</p>
-              <ul className="tags" aria-label="Tech stack">
-                {project.tags.map((tag) => <li className="tag" key={tag}>{tag}</li>)}
-              </ul>
-              <div className="project__links">
-                {project.links.map((link) => <ProjectLink key={link.label} link={link} />)}
-              </div>
-            </li>
-          ))}
-        </ul>
+        <div className="archive">
+          <h3 className="archive__title mono">Archive</h3>
+          <ul>
+            {otherProjects.map((project) => (
+              <li key={project.title} className="archive__row">
+                <h4 className="archive__name serif">{project.title}</h4>
+                <p className="archive__desc">{project.description}</p>
+                <p className="archive__stack mono">{project.tags.join(' / ')}</p>
+                <div className="archive__links">
+                  {project.links.map((link) => <ProjectLink key={link.label} link={link} />)}
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </section>
   );

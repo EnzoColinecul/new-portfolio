@@ -16,10 +16,10 @@ export const contact = {
 };
 
 export const highlights = [
-  { value: '4+ yrs', label: 'Security engineering in high-scale production' },
+  { value: '4+', label: 'Years in security engineering at high-scale companies' },
   { value: '67%', label: 'Better response efficiency on permission reviews' },
-  { value: '50% → ~0', label: 'Automation failure rate, after my reliability fixes' },
-  { value: '3 clouds', label: 'IAM across AWS, GCP and Azure' },
+  { value: '≈0%', label: 'Automation failure rate, down from 50%' },
+  { value: '3', label: 'Clouds secured: AWS, GCP and Azure' },
 ];
 
 export const experience = [

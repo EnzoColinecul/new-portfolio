@@ -1,10 +1,10 @@
+import './index.css';
 import { Toaster } from 'react-hot-toast';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Portfolio from './pages/Portfolio';
 import SpliteaProject from './pages/SpliteaProject/SpliteaProject';
 import CrystalCarpetProject from './pages/CrystalCarpetProject/CrystalCarpetProject';
 
-import './index.css';
 
 function App() {
   return (

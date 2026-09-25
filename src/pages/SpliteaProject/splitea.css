@@ -20,7 +20,7 @@
   --s-line: rgba(15, 26, 42, 0.08);
   --s-line-strong: rgba(15, 26, 42, 0.16);
 
-  --s-sans: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --s-sans: 'Inter Variable', 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
   --s-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
 
   color-scheme: light;

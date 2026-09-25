@@ -1,51 +1,76 @@
 import { earlierRoles, experience } from '../../data/profile';
+import SectionHead from '../section-head/SectionHead';
 import './experience.css';
+
+function period(job) {
+  const start = job.roles[job.roles.length - 1].date.split('–')[0].trim();
+  const end = job.roles[0].date.split('–')[1].trim();
+  return [start, end];
+}
 
 function Experience() {
   return (
     <section id="experience" className="section" aria-labelledby="experience-title">
       <div className="container">
-        <div className="section__head">
-          <p className="section__eyebrow">Experience</p>
-          <h2 id="experience-title" className="section__title">Where I&apos;ve made an impact</h2>
-        </div>
+        <SectionHead
+          index="02"
+          id="experience-title"
+          title={(
+            <>
+              Where I&apos;ve made an
+              {' '}
+              <em>impact</em>
+            </>
+          )}
+          note="2016 — 2026"
+        />
 
-        <ol className="xp">
-          {experience.map((job) => (
-            <li className="xp__item" key={job.company}>
-              <div className="xp__meta">
-                <h3 className="xp__company">{job.company}</h3>
-                <p className="xp__location">{job.location}</p>
-              </div>
+        <ol className="ledger">
+          {experience.map((job) => {
+            const [start, end] = period(job);
+            return (
+              <li className="ledger__row" key={job.company}>
+                <p className="ledger__period mono">
+                  <span>{end}</span>
+                  <span className="ledger__period-sep" aria-hidden="true" />
+                  <span>{start}</span>
+                </p>
 
-              <div className="xp__body card">
-                <ul className="xp__roles">
-                  {job.roles.map((role) => (
-                    <li key={role.title}>
-                      <span className="xp__role">{role.title}</span>
-                      <span className="xp__date">{role.date}</span>
-                    </li>
-                  ))}
-                </ul>
-                <ul className="xp__bullets">
-                  {job.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}
-                </ul>
-                <ul className="tags" aria-label="Tools and skills">
-                  {job.tags.map((tag) => <li className="tag" key={tag}>{tag}</li>)}
-                </ul>
-              </div>
-            </li>
-          ))}
+                <div className="ledger__org">
+                  <h3 className="ledger__company serif">{job.company}</h3>
+                  <p className="ledger__location mono">{job.location}</p>
+                </div>
+
+                <div className="ledger__detail">
+                  <ul className="ledger__roles">
+                    {job.roles.map((role) => (
+                      <li key={role.title}>
+                        <span className="ledger__role">{role.title}</span>
+                        {job.roles.length > 1 ? <span className="ledger__role-date mono">{role.date}</span> : null}
+                      </li>
+                    ))}
+                  </ul>
+                  <ul className="ledger__bullets">
+                    {job.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}
+                  </ul>
+                  <p className="ledger__tools mono">
+                    <span className="sr-only">Tools: </span>
+                    {job.tags.join(' / ')}
+                  </p>
+                </div>
+              </li>
+            );
+          })}
         </ol>
 
-        <div className="xp__earlier">
-          <h3>Earlier</h3>
+        <div className="ledger__earlier">
+          <h3 className="mono">Earlier</h3>
           <ul>
             {earlierRoles.map((role) => (
               <li key={role.title}>
-                <span className="xp__earlier-title">{role.title}</span>
-                <span className="xp__earlier-company">{role.company}</span>
-                <span className="xp__date">{role.date}</span>
+                <span className="mono ledger__earlier-date">{role.date}</span>
+                <span>{role.title}</span>
+                <span className="ledger__earlier-company">{role.company}</span>
               </li>
             ))}
           </ul>
