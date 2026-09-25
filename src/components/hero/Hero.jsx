@@ -1,4 +1,3 @@
-import ME from '../../assets/images/me-new.jpeg';
 import CV from '../../assets/pdf/Enzo_Ariel_Colinecul_CV.pdf';
 import { contact, highlights } from '../../data/profile';
 import PolicyCard from './PolicyCard';
@@ -8,39 +7,15 @@ function Hero() {
   return (
     <section id="home" className="hero" aria-labelledby="hero-name">
       <div className="container">
-        <div className="hero__meta mono">
-          <span>AI Engineer · Cloud security background</span>
-          <span className="hero__coords">Melbourne, AU · 37.81°S 144.96°E</span>
-          <span className="hero__available">
-            <span className="hero__pulse" aria-hidden="true" />
-            Available now
-          </span>
-        </div>
-
-        <div className="hero__top">
-          <h1 id="hero-name" className="hero__name serif">
-            <span className="hero__first">Enzo</span>
-            {' '}
-            <span className="hero__middle">Ariel</span>
-            {' '}
-            <span className="hero__last">Colinecul</span>
-          </h1>
-
-          <figure className="hero__portrait">
-            <img
-              src={ME}
-              alt="Portrait of Enzo Ariel Colinecul"
-              width="640"
-              height="640"
-              loading="eager"
-              fetchpriority="high"
-            />
-            <figcaption className="mono">Fig. 01 — Enzo</figcaption>
-          </figure>
-        </div>
-
         <div className="hero__grid">
           <div className="hero__copy">
+            <h1 id="hero-name" className="hero__name serif">
+              <span className="hero__first">Enzo</span>
+              {' '}
+              <span className="hero__middle">Ariel</span>
+              {' '}
+              <span className="hero__last">Colinecul</span>
+            </h1>
             <p className="hero__lede serif">
               Security engineer turned
               {' '}
