@@ -22,8 +22,8 @@
 .footer__socials a {
   display: grid;
   place-items: center;
-  width: 2.4rem;
-  height: 2.4rem;
+  width: 2.75rem;
+  height: 2.75rem;
   border-radius: var(--radius-sm);
   color: var(--color-muted);
   font-size: 1.1rem;
@@ -31,5 +31,5 @@
 
 .footer__socials a:hover {
   color: var(--color-text);
-  background: rgba(148, 163, 184, 0.08);
+  background: var(--color-tint);
 }

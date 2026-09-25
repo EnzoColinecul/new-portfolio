@@ -8,20 +8,30 @@
 }
 
 :root {
-  --color-bg: #0a0f1c;
-  --color-bg-raised: #0f1627;
-  --color-surface: #131c31;
-  --color-surface-hover: #18233d;
-  --color-line: rgba(148, 163, 184, 0.14);
-  --color-line-strong: rgba(148, 163, 184, 0.28);
-  --color-text: #e8eef8;
-  --color-muted: #9aa8bd;
-  --color-subtle: #6f7d93;
-  --color-accent: #5eead4;
-  --color-accent-strong: #2dd4bf;
-  --color-accent-ink: #042f2a;
-  --color-accent-soft: rgba(94, 234, 212, 0.1);
-  --color-focus: #fcd34d;
+  /* Original portfolio palette: deep navy → maroon gradient, soft pink accent. */
+  --color-bg: #1b0e0e;
+  --color-bg-mid: #381f1f;
+  --color-bg-deep: #6c2c2c;
+  --color-bg-raised: #241313;
+  --color-surface: rgba(27, 14, 14, 0.55);
+  --color-surface-solid: #231212;
+  --color-glass: rgba(27, 14, 14, 0.82);
+  --color-line: rgba(255, 179, 179, 0.14);
+  --color-line-strong: rgba(255, 179, 179, 0.28);
+  --color-tint: rgba(255, 179, 179, 0.08);
+  --color-text: #ffffff;
+  --color-muted: rgba(255, 255, 255, 0.78);
+  --color-subtle: rgba(255, 255, 255, 0.62);
+  --color-accent: #ff8a8a;
+  --color-accent-strong: #ffb3b3;
+  --color-accent-ink: #1b0e0e;
+  --color-accent-soft: rgba(255, 138, 138, 0.12);
+  --color-accent-border: rgba(255, 138, 138, 0.35);
+  --color-success: #6ee7b7;
+  --color-success-ring: rgba(110, 231, 183, 0.2);
+  --color-error: #fca5a5;
+  --color-shadow: rgba(0, 0, 0, 0.55);
+  --color-focus: #ffd166;
 
   /* Legacy aliases kept for any component still referencing them. */
   --color-primary: var(--color-accent);
@@ -46,7 +56,9 @@ html {
 
 body {
   font-family: var(--font-sans);
-  background: var(--color-bg);
+  background: linear-gradient(200deg, #020024 0%, var(--color-bg-mid) 74%, var(--color-bg-deep) 100%);
+  background-color: var(--color-bg);
+  background-repeat: no-repeat;
   color: var(--color-text);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
@@ -58,6 +70,18 @@ input,
 textarea {
   font: inherit;
   color: inherit;
+}
+
+a,
+button,
+summary,
+label {
+  touch-action: manipulation;
+}
+
+button:not(:disabled),
+[role='button'] {
+  cursor: pointer;
 }
 
 :focus-visible {
@@ -73,7 +97,7 @@ textarea {
   padding: 0.7rem 1rem;
   border-radius: var(--radius-sm);
   background: var(--color-focus);
-  color: #1b1405;
+  color: var(--color-accent-ink);
   font-weight: 600;
   transform: translateY(-200%);
   transition: transform 180ms ease;
@@ -128,8 +152,8 @@ a {
   height: 900px;
   pointer-events: none;
   background:
-    radial-gradient(600px 420px at 78% 12%, rgba(94, 234, 212, 0.12), transparent 70%),
-    radial-gradient(700px 500px at 8% 0%, rgba(56, 189, 248, 0.08), transparent 70%);
+    radial-gradient(600px 420px at 78% 12%, var(--color-accent-soft), transparent 70%),
+    radial-gradient(700px 500px at 8% 0%, var(--color-tint), transparent 70%);
   z-index: 0;
 }
 
@@ -193,7 +217,7 @@ a {
   padding: 0.25rem 0.6rem;
   border-radius: 999px;
   color: var(--color-muted);
-  background: rgba(148, 163, 184, 0.08);
+  background: var(--color-tint);
   border: 1px solid var(--color-line);
   white-space: nowrap;
 }
@@ -236,7 +260,7 @@ a {
 }
 
 .btn-sm {
-  min-height: 2.4rem;
+  min-height: 2.75rem;
   padding: 0.5rem 0.95rem;
   font-size: 0.88rem;
 }
@@ -249,6 +273,7 @@ a {
 .text-link {
   display: inline-flex;
   align-items: center;
+  min-height: 2.75rem;
   gap: 0.35rem;
   font-weight: 600;
   font-size: 0.92rem;

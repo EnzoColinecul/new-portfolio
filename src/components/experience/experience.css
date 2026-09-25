@@ -30,6 +30,7 @@
   transition: border-color 180ms ease;
 }
 
+.xp__body:focus-within,
 .xp__body:hover {
   border-color: var(--color-line-strong);
 }

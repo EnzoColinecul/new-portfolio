@@ -10,7 +10,7 @@
 }
 
 .site-nav--scrolled {
-  background: rgba(10, 15, 28, 0.82);
+  background: var(--color-glass);
   backdrop-filter: saturate(160%) blur(14px);
   -webkit-backdrop-filter: saturate(160%) blur(14px);
   border-bottom-color: var(--color-line);
@@ -43,7 +43,7 @@
   height: 2.1rem;
   border-radius: 9px;
   background: var(--color-accent-soft);
-  border: 1px solid rgba(94, 234, 212, 0.35);
+  border: 1px solid var(--color-accent-border);
   color: var(--color-accent);
   font-family: var(--font-mono);
   font-size: 0.8rem;
@@ -56,8 +56,10 @@
 }
 
 .site-nav__menu a {
-  display: block;
-  padding: 0.5rem 0.8rem;
+  display: flex;
+  align-items: center;
+  min-height: 2.75rem;
+  padding: 0 0.8rem;
   border-radius: var(--radius-sm);
   color: var(--color-muted);
   font-size: 0.92rem;
@@ -67,7 +69,7 @@
 .site-nav__menu a:hover,
 .site-nav__menu a.is-active {
   color: var(--color-text);
-  background: rgba(148, 163, 184, 0.08);
+  background: var(--color-tint);
 }
 
 .site-nav__actions {
@@ -79,8 +81,8 @@
 .site-nav__toggle {
   display: none;
   place-items: center;
-  width: 2.4rem;
-  height: 2.4rem;
+  width: 2.75rem;
+  height: 2.75rem;
   border-radius: var(--radius-sm);
   background: transparent;
   border: 1px solid var(--color-line-strong);
@@ -90,7 +92,7 @@
 
 @media screen and (max-width: 860px) {
   .site-nav {
-    background: rgba(10, 15, 28, 0.9);
+    background: var(--color-glass);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
     border-bottom-color: var(--color-line);
