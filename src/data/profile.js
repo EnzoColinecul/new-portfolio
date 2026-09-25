@@ -17,11 +17,12 @@ export const contact = {
 };
 
 // ===== Résumé =====
-// Paste the Google Drive file ID of your CV here (the long code in its share link:
-// drive.google.com/file/d/<THIS_PART>/view). To update the CV later, use Drive's
-// "Manage versions" → "Upload new version" on the same file so this ID never changes.
+// Google Drive file ID of cv-enzo-colinecul-master.pdf (Drive folder "portfolio-cv").
+// To update the CV, upload the new PDF with the SAME name into that folder and choose
+// "Replace existing file" (or use Manage versions → Upload new version) so this ID
+// stays the same. The file must be shared as "Anyone with the link · Viewer".
 // While empty, the site falls back to the PDF bundled in src/assets/pdf.
-export const CV_DRIVE_FILE_ID = '';
+export const CV_DRIVE_FILE_ID = '1nmOxthE31Wne6MB8BEGWyFkC1V44TwoJ';
 
 export const cv = CV_DRIVE_FILE_ID
   ? { href: `https://drive.google.com/uc?export=download&id=${CV_DRIVE_FILE_ID}`, target: '_blank', download: undefined }
