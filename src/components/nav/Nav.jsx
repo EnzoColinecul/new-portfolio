@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import CV from '../../assets/pdf/Enzo_Ariel_Colinecul_CV.pdf';
+import { cv } from '../../data/profile';
 import './nav.css';
 
 const links = [
@@ -83,7 +83,7 @@ function Nav() {
         </nav>
 
         <div className="site-nav__actions">
-          <a href={CV} download="Enzo_Colinecul_CV.pdf" className="site-nav__cv mono">
+          <a href={cv.href} target={cv.target} rel="noreferrer" download={cv.download} className="site-nav__cv mono">
             Résumé
             <span aria-hidden="true">↓</span>
           </a>

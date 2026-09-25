@@ -1,5 +1,4 @@
-import CV from '../../assets/pdf/Enzo_Ariel_Colinecul_CV.pdf';
-import { contact, highlights } from '../../data/profile';
+import { contact, cv, highlights } from '../../data/profile';
 import PolicyCard from './PolicyCard';
 import './hero.css';
 
@@ -27,7 +26,7 @@ function Hero() {
               automation to production at 120k-employee scale.
             </p>
             <div className="hero__cta">
-              <a href={CV} download="Enzo_Colinecul_CV.pdf" className="btn btn-primary">
+              <a href={cv.href} target={cv.target} rel="noreferrer" download={cv.download} className="btn btn-primary">
                 Download résumé
                 <span aria-hidden="true">↓</span>
               </a>

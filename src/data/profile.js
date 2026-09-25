@@ -1,6 +1,7 @@
 // Single source of truth for the portfolio content.
 // Facts here mirror career-ops/cv.md and article-digest.md — update both together.
 
+import BundledCV from '../assets/pdf/Enzo_Ariel_Colinecul_CV.pdf';
 import ImageCrystal from '../assets/images/crystal-logo-ai.png';
 import ImageMafia from '../assets/images/mafia.png';
 import ImageSplitea from '../assets/images/splitea.png';
@@ -14,6 +15,17 @@ export const contact = {
   github: 'https://github.com/EnzoColinecul/',
   location: 'Melbourne, VIC, Australia',
 };
+
+// ===== Résumé =====
+// Paste the Google Drive file ID of your CV here (the long code in its share link:
+// drive.google.com/file/d/<THIS_PART>/view). To update the CV later, use Drive's
+// "Manage versions" → "Upload new version" on the same file so this ID never changes.
+// While empty, the site falls back to the PDF bundled in src/assets/pdf.
+export const CV_DRIVE_FILE_ID = '';
+
+export const cv = CV_DRIVE_FILE_ID
+  ? { href: `https://drive.google.com/uc?export=download&id=${CV_DRIVE_FILE_ID}`, target: '_blank', download: undefined }
+  : { href: BundledCV, target: undefined, download: 'Enzo_Colinecul_CV.pdf' };
 
 export const highlights = [
   { value: '4+', label: 'Years in security engineering at high-scale companies' },
