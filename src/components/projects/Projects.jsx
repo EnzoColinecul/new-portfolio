@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 import { featuredProjects, otherProjects } from '../../data/profile';
 import SectionHead from '../section-head/SectionHead';
+import AgentVisual from './AgentVisual';
 import './projects.css';
 
 function ProjectLink({ link }) {
@@ -45,33 +46,42 @@ function Projects() {
               <em>work</em>
             </>
           )}
-          note="Built outside the day job"
+          note="Products, client work & side builds"
         />
 
         <ol className="works">
           {featuredProjects.map((project, index) => (
             <li key={project.title} className="work">
               <span className="work__num serif" aria-hidden="true">{`0${index + 1}`}</span>
-              <div className="work__media">
-                <img
-                  src={project.img}
-                  alt={`${project.title} preview`}
-                  width={project.width}
-                  height={project.height}
-                  loading="lazy"
-                />
+              <div className={`work__media${project.visual ? ' work__media--visual' : ''}`}>
+                {project.visual === 'agent' ? <AgentVisual /> : (
+                  <img
+                    src={project.img}
+                    alt={`${project.title} preview`}
+                    width={project.width}
+                    height={project.height}
+                    loading="lazy"
+                  />
+                )}
               </div>
               <div className="work__content">
                 <p className="work__kind mono">{project.kind}</p>
                 <h3 className="work__title serif">{project.title}</h3>
                 <p className="work__desc">{project.description}</p>
+                {project.points.length > 0 && (
+                  <ul className="work__points">
+                    {project.points.map((point) => <li key={point}>{point}</li>)}
+                  </ul>
+                )}
                 <p className="work__stack mono">
                   <span className="sr-only">Stack: </span>
                   {project.tags.join(' / ')}
                 </p>
-                <div className="work__links">
-                  {project.links.map((link) => <ProjectLink key={link.label} link={link} />)}
-                </div>
+                {project.links.length > 0 && (
+                  <div className="work__links">
+                    {project.links.map((link) => <ProjectLink key={link.label} link={link} />)}
+                  </div>
+                )}
               </div>
             </li>
           ))}

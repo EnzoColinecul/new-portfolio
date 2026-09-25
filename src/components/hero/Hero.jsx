@@ -1,3 +1,4 @@
+import ME from '../../assets/images/me-new.jpeg';
 import CV from '../../assets/pdf/Enzo_Ariel_Colinecul_CV.pdf';
 import { contact, highlights } from '../../data/profile';
 import PolicyCard from './PolicyCard';
@@ -8,7 +9,7 @@ function Hero() {
     <section id="home" className="hero" aria-labelledby="hero-name">
       <div className="container">
         <div className="hero__meta mono">
-          <span>Cybersecurity &amp; AI Automation Engineer</span>
+          <span>AI Engineer · Cloud security background</span>
           <span className="hero__coords">Melbourne, AU · 37.81°S 144.96°E</span>
           <span className="hero__available">
             <span className="hero__pulse" aria-hidden="true" />
@@ -16,29 +17,39 @@ function Hero() {
           </span>
         </div>
 
-        <h1 id="hero-name" className="hero__name serif">
-          <span className="hero__first">Enzo</span>
-          {' '}
-          <span className="hero__middle">Ariel</span>
-          {' '}
-          <span className="hero__last">Colinecul</span>
-        </h1>
+        <div className="hero__top">
+          <h1 id="hero-name" className="hero__name serif">
+            <span className="hero__first">Enzo</span>
+            {' '}
+            <span className="hero__middle">Ariel</span>
+            {' '}
+            <span className="hero__last">Colinecul</span>
+          </h1>
+
+          <figure className="hero__portrait">
+            <img
+              src={ME}
+              alt="Portrait of Enzo Ariel Colinecul"
+              width="640"
+              height="640"
+              loading="eager"
+              fetchpriority="high"
+            />
+            <figcaption className="mono">Fig. 01 — Enzo</figcaption>
+          </figure>
+        </div>
 
         <div className="hero__grid">
           <div className="hero__copy">
             <p className="hero__lede serif">
-              I make cloud access
+              Security engineer turned
               {' '}
-              <em>safe</em>
-              {' '}
-              and
-              {' '}
-              <em>fast.</em>
+              <em>AI builder.</em>
             </p>
             <p className="hero__body">
-              4+ years in security engineering at Mercado Libre and Naranja X: automating IAM across
-              AWS, GCP and Azure, replacing standing credentials with temporary ones, and building
-              an LLM agent that reviews permission requests.
+              4+ years at Mercado Libre and Naranja X securing cloud access across AWS, GCP and
+              Azure, and shipping agentic LLM workflows, multi-agent RAG assistants and IAM
+              automation to production at 120k-employee scale.
             </p>
             <div className="hero__cta">
               <a href={CV} download="Enzo_Colinecul_CV.pdf" className="btn btn-primary">

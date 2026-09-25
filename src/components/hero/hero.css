@@ -41,16 +41,23 @@
   to { transform: scale(2); opacity: 0; }
 }
 
+.hero__top {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 1.5rem clamp(1.5rem, 4vw, 4rem);
+  margin: clamp(1.25rem, 3vh, 2.5rem) 0 clamp(1.75rem, 4vh, 3rem);
+}
+
+/* Sized by both width and height so the intro stays on the first screen. */
 .hero__name {
-  margin: clamp(1.5rem, 4vw, 3rem) 0 clamp(2rem, 5vw, 4rem);
-  font-size: clamp(4rem, 13.5vw, 12.5rem);
+  font-size: clamp(3.25rem, min(11vw, 15.5vh), 10rem);
   font-weight: 350;
   letter-spacing: -0.05em;
   line-height: 0.86;
 }
 
-.hero__first,
-.hero__last {
+.hero__first {
   display: inline;
 }
 
@@ -67,7 +74,48 @@
 
 .hero__last {
   display: block;
-  padding-left: 0.9em;
+  padding-left: 0.6em;
+}
+
+.hero__portrait {
+  position: relative;
+  width: clamp(150px, min(19vw, 27vh), 280px);
+}
+
+.hero__portrait img {
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-position: 56% 60%;
+  filter: grayscale(1) contrast(1.05);
+  transition: filter 500ms var(--ease-out);
+}
+
+/* Pink duotone; fades to the real photo on hover. */
+.hero__portrait::after {
+  content: '';
+  position: absolute;
+  inset: 0 0 1.75rem 0;
+  background: var(--color-accent);
+  mix-blend-mode: multiply;
+  opacity: 0.55;
+  pointer-events: none;
+  transition: opacity 500ms var(--ease-out);
+}
+
+.hero__portrait:hover img {
+  filter: none;
+}
+
+.hero__portrait:hover::after {
+  opacity: 0;
+}
+
+.hero__portrait figcaption {
+  height: 1.75rem;
+  display: flex;
+  align-items: flex-end;
+  color: var(--color-subtle);
+  text-transform: none;
 }
 
 .hero__grid {
@@ -82,7 +130,7 @@
 }
 
 .hero__lede {
-  font-size: clamp(2rem, 3.6vw, 3rem);
+  font-size: clamp(2rem, min(3.4vw, 5.5vh), 3rem);
   letter-spacing: -0.025em;
   line-height: 1.05;
 }
@@ -119,12 +167,17 @@
   border: 1px solid var(--color-line-strong);
   background: var(--color-glass);
   box-shadow: 0 40px 80px -40px var(--color-shadow);
-  transform: rotate(-1.2deg);
   transition: transform 400ms var(--ease-out);
 }
 
-.policy:hover {
-  transform: rotate(0deg);
+@media screen and (min-width: 1280px) {
+  .policy {
+    transform: rotate(-1.2deg);
+  }
+
+  .policy:hover {
+    transform: rotate(0deg);
+  }
 }
 
 .policy__bar {
@@ -251,10 +304,6 @@
     grid-template-columns: minmax(0, 1fr);
   }
 
-  .policy {
-    transform: none;
-  }
-
   .hero__stats {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -271,8 +320,30 @@
 }
 
 @media screen and (max-width: 560px) {
+  .hero__top {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: start;
+    gap: 1rem;
+  }
+
+  .hero__name {
+    font-size: clamp(2.6rem, 13.5vw, 3.75rem);
+  }
+
   .hero__last {
     padding-left: 0;
+  }
+
+  .hero__portrait {
+    width: clamp(84px, 24vw, 120px);
+  }
+
+  .hero__portrait figcaption {
+    display: none;
+  }
+
+  .hero__portrait::after {
+    inset: 0;
   }
 
   .hero__cta .btn {

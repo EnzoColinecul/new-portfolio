@@ -3,11 +3,12 @@ const policy = `{
   "Statement": [{
     "Sid": "HireEnzo",
     "Effect": "Allow",
-    "Principal": { "Team": "your-security-team" },
+    "Principal": { "Team": "your-team" },
     "Action": [
+      "llm:ShipAgentsToProduction",
+      "rag:GroundAnswers",
       "iam:AutomateAccess",
-      "llm:ReviewPermissions",
-      "cloud:SecureMultiAccount"
+      "idp:MigrateWithZeroErrors"
     ],
     "Resource": ["aws:*", "gcp:*", "azure:*"],
     "Condition": {
@@ -61,9 +62,9 @@ function PolicyCard() {
         ))}
       </pre>
       <p className="sr-only">
-        A playful cloud access policy: allow your security team to hire Enzo to automate access,
-        review permissions with LLMs and secure multi-account setups on AWS, GCP and Azure, based in
-        Melbourne.
+        A playful cloud access policy: allow your team to hire Enzo to ship AI agents to production,
+        ground answers with retrieval, automate access and migrate identity providers with zero
+        errors on AWS, GCP and Azure, based in Melbourne.
       </p>
     </figure>
   );

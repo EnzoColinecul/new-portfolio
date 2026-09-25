@@ -1,5 +1,5 @@
 // Single source of truth for the portfolio content.
-// Update this file to change text across the site without touching layout code.
+// Facts here mirror career-ops/cv.md and article-digest.md — update both together.
 
 import ImageCrystal from '../assets/images/crystal-logo-ai.png';
 import ImageMafia from '../assets/images/mafia.png';
@@ -17,25 +17,29 @@ export const contact = {
 
 export const highlights = [
   { value: '4+', label: 'Years in security engineering at high-scale companies' },
-  { value: '67%', label: 'Better response efficiency on permission reviews' },
+  { value: '67%', label: 'Better response efficiency from my permission-review agent' },
   { value: '≈0%', label: 'Automation failure rate, down from 50%' },
-  { value: '3', label: 'Clouds secured: AWS, GCP and Azure' },
+  { value: '10k', label: 'Users migrated from Auth0 to Okta with zero errors' },
 ];
 
 export const experience = [
   {
+    company: 'Freelance',
+    location: 'Web developer · New Zealand',
+    roles: [{ title: 'Independent Web Developer', date: '2026 – Present' }],
+    bullets: [
+      'Design, build and ship websites end to end for local businesses: requirements, development, deployment and SEO.',
+      'Latest: Crystal Carpet Clean, a conversion-focused, fully responsive site for an Auckland cleaning business.',
+    ],
+    tags: ['Next.js 16', 'React 19', 'TypeScript', 'Tailwind CSS 4', 'SEO'],
+  },
+  {
     company: 'Hire a Techie',
     location: 'Auckland, NZ',
-    roles: [
-      {
-        title: 'IT Deployments (Contractor)',
-        date: 'Feb 2026 – Jun 2026',
-      },
-    ],
+    roles: [{ title: 'IT Field Technician (Contractor)', date: 'Feb 2026 – Jun 2026' }],
     bullets: [
-      'Delivered on-site IT deployments for veterinary clinics across Auckland.',
-      'Replaced end-of-life hardware and tested every system after installation.',
-      'Handled client handover, walking clinic staff through their new setup.',
+      'Delivered on-site IT deployments at veterinary clinics across Auckland, replacing end-of-life hardware and validating every system after installation.',
+      'Kept clients informed throughout each visit and handled the handover of completed work.',
     ],
     tags: ['Hardware deployment', 'Systems testing', 'Client handover'],
   },
@@ -47,24 +51,24 @@ export const experience = [
       { title: 'Cyber Security Developer', date: 'Sep 2022 – Mar 2025' },
     ],
     bullets: [
-      'Designed and deployed an agentic LLM workflow that analyses internal cloud permission requests, flags critical actions and asks context-aware follow-up questions.',
-      'Cut automation failure rates from 50% to near zero, a 67% improvement in response efficiency.',
-      'IAM technical representative for AWS, GCP and Azure; designed and maintained the APIs and automations behind cloud access management.',
-      'Replaced permanently visible credentials with temporary, one-time-view secure links.',
-      'Built a cross-account role management solution on CloudFormation, Lambda, S3 and EventBridge.',
-      'Reviewed pull requests and wrote API documentation for internal teams.',
+      'Designed and shipped an agentic workflow (Python + OpenAI API) that analyses cloud permission requests, flags critical actions and asks context-aware follow-up questions for human review. Cut failure rates from 50% to near zero: a 67% gain in response efficiency.',
+      'Built the Cloud IAM agent of a multi-agent internal assistant on Slack and web portals: LangGraph routing over Amazon Bedrock Knowledge Bases, deciding at runtime whether to retrieve docs or call live AWS/GCP APIs.',
+      'Fixed production hallucinations by constraining prompts to retrieved content and adding a graceful escalation to human support with full context.',
+      'Led the Auth0 → Okta identity-provider migration across AWS Identity Center and OCI using SAML and SCIM: a zero-error rollout for ~10,000 users.',
+      'Replaced permanent credentials with temporary, one-time-view secure links, and built cross-account AWS role management on CloudFormation, Lambda, S3 and EventBridge.',
+      'Acted as a technical focal point: triaged cross-team requests, scoped solutions with stakeholders, mentored junior engineers and reviewed pull requests across repositories.',
     ],
-    tags: ['Python', 'AWS', 'GCP', 'Azure', 'IAM', 'LLM agents', 'CloudFormation'],
+    tags: ['Python', 'OpenAI API', 'LangGraph', 'Bedrock', 'Okta', 'SAML / SCIM', 'AWS', 'GCP'],
   },
   {
     company: 'Naranja X',
     location: 'Argentina',
     roles: [{ title: 'IAM Security Engineer Jr.', date: 'Jul 2021 – Sep 2022' }],
     bullets: [
-      'Managed access control across on-premises and cloud environments in line with security policy.',
-      'Ran audit documentation and security reviews to keep IAM consistent.',
+      'Managed access control across on-premises and cloud environments.',
+      'Ran audit documentation and security reviews.',
       'Built an internal IAM management tool end to end (React + Node.js).',
-      'Gave cybersecurity awareness talks to new employees.',
+      'Gave cybersecurity talks to new employees.',
     ],
     tags: ['IAM', 'Audits', 'React', 'Node.js'],
   },
@@ -72,18 +76,35 @@ export const experience = [
 
 export const earlierRoles = [
   { title: 'Technical Support Help Desk', company: 'NET desarrollos', date: '2019 – 2020' },
-  { title: 'Technical Support', company: 'CIEFAP-UNPSJB', date: '2016 – 2017' },
+  { title: 'Technical Support (Contract)', company: 'CIEFAP-UNPSJB', date: '2016 – 2017' },
 ];
 
 export const featuredProjects = [
+  {
+    title: 'Find Me A Job AI',
+    kind: 'Solo AI product · Worldwide beta',
+    visual: 'agent',
+    description: 'Pick a location, radius and role. Google Places finds nearby businesses, then an autonomous LLM agent investigates each one (careers page → job boards → contact email) and returns a ranked list of real opportunities.',
+    points: [
+      'Pluggable LLM layer (Amazon Bedrock / Gemini) with a triage → tool-loop → structured-report orchestrator, hard budgets and per-run cost accounting.',
+      'LLM-as-judge quality gate and a golden eval set (14/14 accuracy, 20/20 links), enforced in code and failing closed.',
+      'Serverless AWS via CDK: FastAPI on Lambda, Step Functions, DynamoDB single-table, Cognito PKCE; Next.js 15 frontend.',
+    ],
+    tags: ['Python', 'FastAPI', 'AWS CDK', 'Step Functions', 'Bedrock', 'Gemini', 'Next.js 15'],
+    links: [],
+  },
   {
     title: 'Splitea',
     kind: 'Product · Mobile app',
     img: ImageSplitea,
     width: 945,
     height: 2048,
-    description: 'Expense-sharing app for groups. React Native client with a Python FastAPI backend, containerised with Docker and versioned with Alembic migrations.',
-    tags: ['React Native', 'FastAPI', 'Docker', 'Alembic'],
+    description: 'Shared-expense app with AI receipt workflows: Textract extracts line items, Transcribe parses voice instructions and Bedrock proposes the split.',
+    points: [
+      'FastAPI REST API (JWT auth, groups, settlements) and a React Native (Expo) app.',
+      'AWS infrastructure in Terraform: VPC, ECS/ALB, RDS MySQL, S3, SQS, CloudWatch.',
+    ],
+    tags: ['FastAPI', 'React Native', 'Terraform', 'Bedrock', 'Textract'],
     links: [{ label: 'Read case study', to: '/splitea-project', internal: true }],
   },
   {
@@ -92,8 +113,9 @@ export const featuredProjects = [
     img: ImageCrystal,
     width: 1254,
     height: 1254,
-    description: 'Conversion-focused website for a carpet and upholstery cleaning business in Auckland, built to earn trust and turn visitors into bookings.',
-    tags: ['Web design', 'Conversion', 'Live client site'],
+    description: 'Single-page marketing site for an Auckland carpet and upholstery cleaning business, built to turn visitors into bookings with prominent calls to action and review-based trust signals.',
+    points: [],
+    tags: ['Next.js 16', 'React 19', 'TypeScript', 'Tailwind CSS 4'],
     links: [
       { label: 'Visit live site', href: 'https://www.crystalcarpetclean.co.nz/' },
       { label: 'Case study', to: '/crystal-carpet-project', internal: true },
@@ -105,8 +127,9 @@ export const featuredProjects = [
     img: ImageMafia,
     width: 800,
     height: 1472,
-    description: 'Online version of the classic social deduction party game. A standalone Node.js + Socket.IO server keeps authoritative game state in Redis.',
-    tags: ['Node.js', 'Socket.IO', 'Redis', 'Real-time'],
+    description: 'Online version of the classic social deduction party game, with a Next.js frontend and an authoritative Node.js + Socket.IO backend keeping game state in Redis.',
+    points: [],
+    tags: ['Next.js', 'Socket.IO', 'Redis', 'TypeScript'],
     links: [
       { label: 'Frontend code', href: 'https://github.com/EnzoColinecul/mafia-game/tree/master' },
       { label: 'Backend code', href: 'https://github.com/EnzoColinecul/mafia-game-server' },
@@ -124,7 +147,7 @@ export const otherProjects = [
   {
     title: 'Rick and Morty Explorer',
     description: 'React, Redux and Firebase app built with a Kanban workflow.',
-    tags: ['React', 'Redux', 'Firebase', 'Tailwind'],
+    tags: ['React', 'Redux', 'Firebase'],
     links: [
       { label: 'Demo', href: 'https://enzocolinecul.github.io/rick-and-morty-app/' },
       { label: 'Code', href: 'https://github.com/EnzoColinecul/rick-and-morty-app' },
@@ -143,28 +166,28 @@ export const otherProjects = [
 
 export const skills = [
   {
-    title: 'Security & IAM',
-    items: ['Multi-cloud IAM', 'IAM policy design', 'Access automation', 'Temporary credentials', 'Security audits', 'Entra ID'],
+    title: 'AI & LLMs',
+    items: ['Agentic workflows (LangGraph)', 'Multi-agent orchestration', 'RAG (Bedrock Knowledge Bases)', 'Tool calling & structured output', 'LLM evaluation (golden sets, LLM-as-judge)', 'LLM cost control & guardrails', 'OpenAI · Gemini · Bedrock'],
   },
   {
-    title: 'AI & LLMs',
-    items: ['Agentic workflows', 'LLM APIs (OpenAI)', 'RAG pipelines', 'Claude Code'],
+    title: 'Identity & Access',
+    items: ['Okta · Auth0', 'SAML · SCIM', 'OAuth 2.0 / OIDC (PKCE)', 'AWS IAM & Identity Center', 'Cognito', 'Entra ID · Active Directory'],
   },
   {
     title: 'Cloud',
-    items: ['AWS (Lambda, S3, EventBridge, API Gateway, IAM)', 'GCP (IAM, BigQuery)', 'Azure (Functions, Entra ID)', 'OCI'],
+    items: ['AWS: Lambda, Step Functions, EventBridge, DynamoDB, ECS, Bedrock', 'GCP: Vertex AI, BigQuery, IAM', 'Azure: Entra ID', 'OCI: IAM'],
   },
   {
     title: 'Backend',
-    items: ['Python', 'FastAPI', 'Flask', 'Node.js', 'REST APIs'],
+    items: ['Python 3.12', 'FastAPI · Flask', 'Node.js', 'Pydantic · pytest', 'DynamoDB · MySQL'],
+  },
+  {
+    title: 'Frontend',
+    items: ['TypeScript', 'Next.js · React', 'React Native (Expo)', 'Tailwind CSS', 'Accessible, responsive UI'],
   },
   {
     title: 'Infrastructure & DevOps',
-    items: ['Terraform', 'CloudFormation', 'Docker', 'GitHub Actions', 'Serverless'],
-  },
-  {
-    title: 'Data & Ways of working',
-    items: ['PostgreSQL', 'MySQL', 'DynamoDB', 'Scrum', 'Kanban'],
+    items: ['AWS CDK · Terraform', 'CloudFormation', 'Docker', 'GitHub Actions (OIDC to AWS)'],
   },
 ];
 

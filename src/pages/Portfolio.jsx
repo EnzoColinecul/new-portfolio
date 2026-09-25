@@ -10,7 +10,7 @@ import Footer from '../components/footer/Footer';
 import usePageMetadata from '../hooks/usePageMetadata';
 
 function Portfolio() {
-  usePageMetadata('Enzo Colinecul — Cybersecurity & AI Automation Engineer', '#0a0f1c', 'dark');
+  usePageMetadata('Enzo Colinecul — AI Engineer, cloud security background', '#1b0e0e', 'dark');
 
   return (
     <div className="home">

@@ -108,13 +108,13 @@
   border: 1px solid var(--color-line-strong);
 }
 
-@media screen and (max-width: 1080px) {
+@media screen and (max-width: 1240px) {
   .site-nav__name {
     display: none;
   }
 }
 
-@media screen and (max-width: 880px) {
+@media screen and (max-width: 1080px) {
   .site-nav {
     background: var(--color-glass);
     backdrop-filter: blur(12px);

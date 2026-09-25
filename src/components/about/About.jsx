@@ -1,12 +1,11 @@
-import ME from '../../assets/images/me-new.jpeg';
 import { contact, languages } from '../../data/profile';
 import SectionHead from '../section-head/SectionHead';
 import './about.css';
 
 const facts = [
   ['Based in', contact.location],
-  ['Open to', 'Roles across Australia, relocation OK'],
-  ['Focus', 'Cloud IAM, security automation, LLM agents'],
+  ['Open to', 'Remote, hybrid or on-site · relocation within Australia'],
+  ['Focus', 'AI engineering, agentic workflows, cloud IAM'],
   ['Languages', languages.join(' · ')],
 ];
 
@@ -17,32 +16,31 @@ function About() {
         <SectionHead index="01" id="about-title" title="About" note="The short version" />
 
         <div className="about__grid">
-          <figure className="about__photo">
-            <img src={ME} alt="Enzo Ariel Colinecul" width="640" height="640" loading="lazy" />
-            <figcaption className="mono">Fig. 01 — Enzo, off the clock</figcaption>
-          </figure>
+          <p className="about__pull serif">
+            I ship AI to
+            {' '}
+            <em>production</em>
+            , not just prototypes.
+          </p>
 
           <div className="about__content">
-            <p className="about__pull serif">
-              A security engineer who ships
-              {' '}
-              <em>automation</em>
-              , not tickets.
-            </p>
-
             <div className="about__body">
               <p>
                 I spent three years in Mercado Libre&apos;s security team, one of Latin
-                America&apos;s largest tech companies with 120k+ employees, owning how engineers get
-                access to AWS, GCP and Azure. The job was to make access both safe and fast: APIs
-                and automation instead of manual approvals, temporary credentials instead of
-                permanent ones.
+                America&apos;s largest tech companies, owning how engineers get access to AWS, GCP
+                and Azure. I automated what used to be manual: permission reviews, credential
+                handling, cross-account roles and a 10,000-user identity migration.
               </p>
               <p>
-                Lately I&apos;ve focused on applied AI. I built an agentic LLM workflow that reviews
-                cloud permission requests, flags risky actions and asks the right follow-up
-                questions, and I&apos;m an AWS Certified AI Practitioner. Now in Melbourne, looking
-                for my next role in cybersecurity, IAM or AI automation.
+                That work pulled me into applied AI. I built an LLM agent that reviews cloud
+                permission requests and the IAM agent of a multi-agent RAG assistant, and learned
+                the hard parts in production: hallucinations, evaluation, cost and graceful failure.
+              </p>
+              <p>
+                I was also a technical focal point for my team, scoping requests with stakeholders,
+                mentoring junior engineers and reviewing code across repositories. Now based in
+                Melbourne, I&apos;m looking for my next role in AI engineering, agentic automation
+                or cloud security.
               </p>
             </div>
 
